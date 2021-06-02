@@ -1,0 +1,24 @@
+
+
+{% extends 'contentpiece/base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row g-5">
+        <div class="col">
+            <div class="container mb-3">
+                <h2 class="font-weight-bold mt-3">Delete Post</h2> 
+                <hr>
+                <form method="POST">
+                    {% csrf_token %}
+                    <h2>Are you sure you want to delete the post -- {{ item.item_name }}--?</h2> <br>
+                    <button class="btn btn-danger" type="submit">Confirm</button>
+                    <a href="{% url 'myposts:index' %}" class="btn btn-primary">Cancel</a>
+                </form>
+            </div> 
+        </div>
+        </div>
+    </div>
+    
+
+{% endblock %}

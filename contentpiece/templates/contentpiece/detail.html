@@ -1,0 +1,79 @@
+{% extends 'contentpiece/base.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 offset-md-2">
+            <img width="180px" height="180px" src="{{ item.thumbnail.url }}" alt="">
+        </div>
+        <div class="col-md-6">
+            <h1>{{item.item_name}} 
+            {% if is_favourite %}
+            <a href="{% url 'contentpiece:favourite_post' id=item.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="#00b03c" class="bi bi-bookmarks-fill" viewBox="0 0 16 16">
+              <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+              <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+            </svg></a>
+            {% else %}  
+            <a href="{% url 'contentpiece:favourite_post' id=item.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="#00b03c" class="bi bi-bookmarks" viewBox="0 0 16 16">
+              <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4zm2-1a1 1 0 0 0-1 1v10.566l3.723-2.482a.5.5 0 0 1 .554 0L11 14.566V4a1 1 0 0 0-1-1H4z"/>
+              <path d="M4.268 1H12a1 1 0 0 1 1 1v11.768l.223.148A.5.5 0 0 0 14 13.5V2a2 2 0 0 0-2-2H6a2 2 0 0 0-1.732 1z"/>
+            </svg></a>
+            {% endif %}  
+            </h1>
+            <h2>{{item.item_description}}</h2>
+            <h2 style="color: gray; font-size: smaller;">Topic: {{item.topic}}</h2>
+
+            
+        <!-- Play button     -->
+
+         {% if user.is_authenticated %}
+         <a href="{% url 'contentpiece:play_image' item.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#00b03c" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+        </svg></a>  
+         <br>
+         <br>
+         <!-- <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+          </svg>Bookmark</a> -->
+                    
+        {% else %}
+            <a href="{% url 'register' %}"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#00b03c" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+            </svg></a> 
+
+            <br><br>
+            
+                       
+        {% endif %}
+
+        <!-- Comment Section -->
+        <h4> Comments </h4> 
+        {% if user.is_authenticated %}
+        <a href="{% url 'contentpiece:add_comment' item.id %}">Post a Comment </a>
+        {% else %}
+        <a href="{% url 'register' %}">Post a Comment </a>
+         {% endif %}   
+        <hr>
+        {% if not item.comments.all %}
+        <h6>No comments yet</h6>
+        {% else %}
+        
+        {% for comment in item.comments.all %}
+        <strong>
+          {{ comment.name }} -
+          {{ comment.timestamp }} -
+        </strong>
+          <br> 
+          {{ comment.content }} <br><hr>
+        {% endfor %}
+
+        {% endif %}
+        </div>
+        
+       
+
+</div><br><br>
+
+
+{% endblock %}
+
