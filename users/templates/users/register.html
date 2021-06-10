@@ -11,7 +11,7 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button class="btn btn-success" type="submit">SIGNUP</button> <br><br>
-                <!-- <h7>We use email id to help you recover your password </h7><br><br> -->
+                <h7>We use email id to help you recover your password </h7><br><br>
                 <h3>Already have an account? <a href="{% url 'login' %}">Login</a></h3>
             
             </form>

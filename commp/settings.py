@@ -181,12 +181,11 @@ MEDIA_URL= '/media/'
 LOGIN_REDIRECT_URL = 'contentpiece:index'
 LOGIN_URL = 'login'
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 
-# EMAIL_BACKEND = 'django_ses.SESBackend'
-# AWS_ACCESS_KEY_ID = config('YOUR-ACCESS-KEY-ID')
-# AWS_SECRET_ACCESS_KEY = config('YOUR-SECRET-ACCESS-KEY')
-# AWS_SES_REGION_NAME = config('REGION-NAME')
-# AWS_SES_REGION_ENDPOINT =config('REGION-ENDPOINT')
-# EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
+
 
