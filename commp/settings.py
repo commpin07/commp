@@ -183,10 +183,10 @@ LOGIN_URL = 'login'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_BACKEND = 'django_ses.SESBackend'
-AWS_ACCESS_KEY_ID = config('YOUR-ACCESS-KEY-ID')
-AWS_SECRET_ACCESS_KEY = config('YOUR-SECRET-ACCESS-KEY')
-AWS_SES_REGION_NAME = config('REGION-NAME')
-AWS_SES_REGION_ENDPOINT =config('REGION-ENDPOINT')
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
+# EMAIL_BACKEND = 'django_ses.SESBackend'
+# AWS_ACCESS_KEY_ID = config('YOUR-ACCESS-KEY-ID')
+# AWS_SECRET_ACCESS_KEY = config('YOUR-SECRET-ACCESS-KEY')
+# AWS_SES_REGION_NAME = config('REGION-NAME')
+# AWS_SES_REGION_ENDPOINT =config('REGION-ENDPOINT')
+# EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
 
