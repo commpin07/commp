@@ -26,11 +26,11 @@ urlpatterns = [
     path('securelogin/', admin.site.urls),
 
     # home page
-    path('',myapp_views.home, name='home'),
+    # path('',myapp_views.home, name='home'),
    
     
     # default listing from contentpiece app
-    path('resources/', include('contentpiece.urls')),
+    path('', include('contentpiece.urls')),
    
     # user registration
     path('register/',users_views.register, name='register'),

@@ -6,7 +6,7 @@
         <div class="col-md-3 offset-md-2">
             <img width="180px" height="180px" src="{{ item.thumbnail.url }}" alt="">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <h1>{{item.item_name}} 
             {% if is_favourite %}
             <a href="{% url 'contentpiece:favourite_post' id=item.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="#00b03c" class="bi bi-bookmarks-fill" viewBox="0 0 16 16">
