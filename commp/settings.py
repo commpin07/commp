@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'myapp',
     'admin_honeypot',
     'storages',
-    
+    'flashcard',
     
 ]
 
