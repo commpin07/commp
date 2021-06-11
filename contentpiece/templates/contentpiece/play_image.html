@@ -1,7 +1,7 @@
 {% extends 'contentpiece/base.html' %}
 
 {% block body %}
-<div class="contianer p-5">
+<!-- <div class="contianer m-5">
   <div class="row">
     <div class="col-md-3 offset-md-2">
       <video width="850" height="500" style="align-items: center;" controls autoplay>
@@ -13,6 +13,22 @@
 </div>
 
   
+ -->
+
+ <div class="container">
+  <div class="row g-5">
+      <div class="col offset-md-1">
+          <div class="container mb-3">
+              <h2>{{item.item_name}}</h2>
+              <hr>
+              <video width="850" height="500" controls autoplay>
+     
+                <source align-content:center src="{{ item.item_article.url }}" type=video/mp4>
+              </video>
+          </div> 
+      </div>
+      </div>
+  </div>
 
 
 
