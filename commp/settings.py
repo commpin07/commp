@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'admin_honeypot',
     'storages',
     'flashcard',
+   
     
 ]
 
@@ -81,6 +82,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'commp.wsgi.application'
+
 
 
 # Database

@@ -4,6 +4,7 @@ from django.contrib import messages
 from .forms import RegistrationForm
 from django.contrib.auth.decorators import login_required
 from contentpiece.models import Item
+from .models import Profile
 from django.http import HttpResponseRedirect, HttpResponse
 
 # password reset 
@@ -31,6 +32,22 @@ def register(request):
     else:
         form = RegistrationForm()
     return render(request, 'users/register.html', {'form':form})
+
+# def profileEdit(request):
+#     # profile = Profile.objects.get(id=id)
+  
+#     if request.method == 'POST':
+#         form = ProfileEditForm(request.POST, request.FILES, instance = request.user)
+#         if form.is_valid():
+#             profile = form.save(commit=False)
+#             profile.user = request.user
+#             form.save()
+#             return redirect('login')
+#     else:
+#         form = ProfileEditForm()
+#     return render(request, 'users/profile_edit.html', {'form':form})
+
+
 
 @login_required
 def profilepage(request):

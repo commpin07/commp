@@ -44,6 +44,8 @@ urlpatterns = [
     # profile page
     path('profile/',users_views.profilepage, name='profile'),
 
+    
+
     # forgot password
     path('forgotPassword/', users_views.forgotPassword, name='forgotPassword'),
     path('resetpassword_validate/<uidb64>/<token>/', users_views.resetpassword_validate, name='resetpassword_validate'),
