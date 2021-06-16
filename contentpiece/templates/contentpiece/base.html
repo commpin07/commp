@@ -24,20 +24,17 @@
                          <a href="{% url 'register' %}" class="btn btn-success" >Share Your Ideas</a> </button>
                         {% endif %}
          -->
-                        <!-- <a class="active nav-link" href="#home"><h5 style="font-size: medium; color: black;">Flash Card</h5></a>
-                        <a class="active nav-link" href="#home"><h5 style="font-size: medium; color: black;">Discussion Board</h5></a>
-                        <a class="nav-link" href="#home"><h5 style="font-size: medium; color: black;">Expert Corner</h5></a> -->
+                        <!-- <a class="active nav-link" href="#home"><h5 style="font-size: medium; color: black;">Flash Card</h5></a> -->
+                        <!-- <a class="active nav-link" href="#home"><h5 style="font-size: medium; color: black;">Discussion Board</h5></a> -->
+                        <!-- <a class="nav-link" href="{% url 'expert:expertView' %}"><h5 style="font-size: medium; color: black;">Expert Corner</h5></a>  -->
                        
-                        <!-- <a class="nav-link"href="#contact">Games</a>
-                        <a class="nav-link"href="#about">Pricing</a>
-                  -->
-                        {% if user.is_authenticated %}
+                            {% if user.is_authenticated %}
                                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                                 <a class="btn btn-success" href="{% url 'profile' %}">Profile</a>
                                 
                             {% else %}
                                 <a class="btn btn-success" href="{% url 'login' %}">Login</a> 
-                                <!-- <h1 style="color: white;"> | </h1> -->
+                                
                                 <!-- <a href="{% url 'register' %}">Signup</a> -->
                             {% endif %}
                         
