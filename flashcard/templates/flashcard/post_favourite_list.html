@@ -1,0 +1,39 @@
+{% extends 'contentpiece/base.html' %}
+{% block body %}
+
+<div class="container">
+    <h2>My Bookmarked Flash Cards</h2>
+    <hr><br>
+
+</div>
+
+{% for item in favourite_posts %}
+    
+    <div class="row">
+        <div class="col-md-3 offset-md-2">
+            <img width="180px" height="180px" src="{{ item.thumbnail.url }}">
+        </div>
+        <div class="col-md-4">
+            <h2>{{item.item_title}}</h2>
+            <h5>{{item.description}}</h5>
+            
+            <!-- <h6 style="color: gray; font-size: smaller;">Topic: {{item.topic}}</h6>  -->
+            
+        </div>
+        <div class="col-md-2">
+            <a href="{% url 'flashcard:detail' item.id %}" class="btn btn-success">Details</a>
+        </div> 
+        
+    </div>   <p></p>
+
+    {% empty %}
+        <div class="container">
+            <h3> No bookmarked flash cards </h3>
+        </div>
+
+    {% endfor %}
+    <br><br>
+
+
+    
+{% endblock %}

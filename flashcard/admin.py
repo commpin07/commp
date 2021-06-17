@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Item
+from .models import ItemFC, Genre, CommentFlashCard
 # Register your models here.
 
-admin.site.register(Item)
+admin.site.register(ItemFC)
+admin.site.register(Genre)
+admin.site.register(CommentFlashCard)

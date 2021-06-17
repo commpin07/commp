@@ -1,0 +1,23 @@
+{% extends 'contentpiece/base.html' %}
+
+{% block body %}
+
+
+  
+      
+   
+      <div class="container">
+            <div class="row g-5">
+                <div class="col">
+                    <div class="container mb-3">
+                        <h2>Flash Card Title: {{item.item_title}}</h2>
+                        
+                        <hr>
+                        <img width="700px" height="1000px" src="{{ item.article.url }}" alt="">
+                    </div> 
+                </div>
+                </div>
+            <!-- </div> -->
+  
+  
+{% endblock %}

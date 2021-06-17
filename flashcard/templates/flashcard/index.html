@@ -1,0 +1,77 @@
+{% extends 'contentpiece/base.html' %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    
+    {% block body %}
+        
+        <!-- search bar -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Flash Cards</h2>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        
+        <br>
+        
+    
+    <!-- Displaying items -->
+    
+    {% for item in item_list %}
+  
+    <div class="row">
+        <div class="col-md-3 offset-md-2">
+            <img width="180px" height="180px" src="{{ item.thumbnail.url }}">
+        </div>
+        <div class="col-md-4">
+            <h2>{{item.item_title}}</h2>
+            <h5 style="font-size: small; color: grey;">{{item.description}}</h5>
+            
+            
+        </div>
+   
+        <div class="col-md-2">
+            <a href="{% url 'flashcard:detail' item.id %}" class="btn btn-success">Details</a> <br>
+            
+    </div>
+</div>
+<p></p><p></p>
+    {% endfor %}
+    
+    
+    <!-- pagination -->
+
+    <div class="container">
+        {% if item_list.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ item_list.previous_page_number }}">Previous</a>
+    {% endif %}
+    Page: {{ item_list.number }} of {{ item_list.paginator.num_pages }}
+    {% if item_list.has_next %}
+        <a href="?page={{ item_list.next_page_number }}">Next</a>
+        <a href="?page={{ item_list.paginator.num_pages }}">Last</a>
+    {% endif %}    
+    </div><br><br><br>
+
+   {% endblock %}
+    
+
+
+</body>
+</html>
+

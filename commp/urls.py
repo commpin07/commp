@@ -47,6 +47,8 @@ urlpatterns = [
 
     path('expert/', include('expert.urls')),
 
+    path('flashcard/',include('flashcard.urls')),
+
     
 
     # forgot password
