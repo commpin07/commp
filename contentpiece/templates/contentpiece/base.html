@@ -29,7 +29,7 @@
                         <!-- <a class="nav-link" href="{% url 'expert:expertView' %}"><h5 style="font-size: medium; color: black;">Expert Corner</h5></a>  -->
                        
                             {% if user.is_authenticated %}
-                                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                                <a class="btn btn-link" style="color: grey;" href="{% url 'logout' %}">Logout</a>
                                 <a class="btn btn-success" href="{% url 'profile' %}">Profile</a>
                                 
                             {% else %}
