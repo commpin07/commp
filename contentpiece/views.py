@@ -126,7 +126,7 @@ def post_like(request):
 
 def post_favourite_list(request):
 	user = request.user
-	favourite_posts = user.favourite.all()
+	favourite_posts = user.favourite.all().order_by('-id')
 	context = {
 		'favourite_posts':favourite_posts
 	}

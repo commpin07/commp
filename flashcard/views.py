@@ -64,7 +64,7 @@ class AddCommentView(CreateView):
 
 def posts_favourite_list(request):
 	user = request.user
-	favourite_posts = user.fav.all()
+	favourite_posts = user.fav.all().order_by('-id')
 	context = {
 		'favourite_posts':favourite_posts
 	}
