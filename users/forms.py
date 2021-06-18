@@ -15,8 +15,8 @@ class RegistrationForm(UserCreationForm):
         fields = ['first_name','last_name', 'email','username', 'password1', 'password2']
         widgets = {
             'username':forms.TextInput(attrs={'class':'form-control'}),
-            'password1':forms.PasswordInput(attrs={'class':'form-control'}),
-            'password2':forms.PasswordInput(attrs={'class':'form-control'}),
+            # 'password1':forms.PasswordInput(attrs={'class':'form-control'}),
+            # 'password2':forms.PasswordInput(attrs={'class':'form-control'}),
            
         }
 
