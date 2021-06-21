@@ -31,7 +31,7 @@ class CommentFlashCard(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return '{} - {}'.format(self.post.title, str(self.name))
+        return '{} - {}'.format(self.post.item_title, str(self.name))
 
     
         
