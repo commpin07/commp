@@ -42,7 +42,7 @@
 
         <!-- Comment Section -->
         <h4> Comments </h4> 
-        
+        <h6>{{ itemfc.comments.all.count }} comment{{ itemfc.comments.all|pluralize }}</h6> 
         <a href="{% url 'flashcard:add_comment' itemfc.id %}">Post a Comment </a>
         
         <hr>

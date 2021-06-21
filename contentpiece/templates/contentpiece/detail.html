@@ -50,6 +50,7 @@
 
         <!-- Comment Section -->
         <h4> Comments </h4> 
+        <h6>{{ item.comments.all.count }} comment{{ item.comments.all|pluralize }}</h6> 
         {% if user.is_authenticated %}
         <a href="{% url 'contentpiece:add_comment' item.id %}">Post a Comment </a>
         {% else %}

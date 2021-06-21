@@ -31,7 +31,7 @@
       
         <!-- Comment Section -->
         <h4> Comments </h4> 
-        
+        <h6>{{ itemdib.comments.all.count }} comment{{ itemdib.comments.all|pluralize }}</h6> 
         <a href="{% url 'disboard:add_comment' itemdib.id %}">Post a Comment </a>
         
         <hr>
