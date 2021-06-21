@@ -11,6 +11,7 @@ class ItemDib(models.Model):
     item_title = models.CharField(max_length=256)
     description = models.CharField(max_length=500)
     thumbnail = models.ImageField(upload_to='media', default="c.png")  
+    name = models.CharField(max_length=256, default=None)
     favs = models.ManyToManyField(User, related_name='favs', default=None, blank=True)
 
     def get_absolute_url(self):
@@ -23,4 +24,4 @@ class CommentDib(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return '{} - {}'.format(self.post.title, str(self.name))        
+        return '{} - {}'.format(self.post.item_title, str(self.name))        

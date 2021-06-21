@@ -17,8 +17,9 @@ class CommentForm(forms.ModelForm):
 class ItemForm(forms.ModelForm):
     class Meta:
         model = ItemDib
-        fields = ['item_title', 'description','thumbnail']
+        fields = ['name','item_title', 'description','thumbnail']
         widgets = {
+            'name':forms.TextInput(attrs={'class':'form-control'}),
             'item_title':forms.TextInput(attrs={'class':'form-control'}),
             'description':forms.Textarea(attrs={'class':'form-control'}),
         }

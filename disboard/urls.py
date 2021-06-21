@@ -24,5 +24,8 @@ urlpatterns= [
 
     # to comment
     path('<int:id>/comment', views.AddCommentView.as_view(), name='add_comment'),
+
+    # search bar
+    path('search/',views.search_item, name='search_item'),
     
 ]

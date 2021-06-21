@@ -83,4 +83,19 @@ def favourite_posts(request, id):
         post.favs.remove(request.user)
     else:
         post.favs.add(request.user)
-    return HttpResponseRedirect(post.get_absolute_url())                
+    return HttpResponseRedirect(post.get_absolute_url())  
+
+
+# search bar
+def search_item(request):
+    if 'keywords' in request.GET:
+        keyword = request.GET['keywords']
+        if keyword:
+            products = ItemDib.objects.order_by('-id').filter(Q(description__icontains=keyword) | Q(item_title__icontains=keyword))
+            product_count = products.count()
+    context = {
+        'products': products,
+        'product_count': product_count,
+    }
+    return render(request, 'disboard/search_item.html', context)
+    
