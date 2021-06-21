@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'storages',
     'flashcard',
    'expert',
+    'disboard',
     
 ]
 

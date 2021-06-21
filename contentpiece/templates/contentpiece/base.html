@@ -29,18 +29,29 @@
                          <a href="{% url 'register' %}" class="btn btn-success" >Share Your Ideas</a> </button>
                         {% endif %} -->
         
-                        <a class="btn btn-link" style="color: black;" href="{% url 'flashcard:index' %}">Flash Cards</a>
-                        <!-- <a class="active nav-link" href="#home"><h5 style="font-size: medium; color: black;">Discussion Board</h5></a> -->
+                        <!-- <a class="btn btn-link" style="color: black;" href="{% url 'flashcard:index' %}">Flash Cards</a> -->
+                        <!-- <a class="btn btn-link" style="color: black;" href="{% url 'disboard:index' %}">Discussion Boards</a> -->
+                        
                         <!-- <a class="nav-link" href="{% url 'expert:expertView' %}"><h5 style="font-size: medium; color: black;">Expert Corner</h5></a>  -->
                        
-                            {% if user.is_authenticated %}
+                        <div class="dropdown">
+                            <button class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown">
+                              Quick Resources
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a style="color: black; margin-left: 5px; font-size: small;" href="{% url 'flashcard:index' %}">Flash Cards</a></li>
+                              <li><a style="color: black; margin-left: 5px; font-size: small;" href="{% url 'disboard:index' %}">Discussion Boards</a></li>
+                            </ul>
+                          </div>
+
+                        {% if user.is_authenticated %}
                             <div class="dropdown">
                                 <button class="btn btn-success btn-sm dropdown-toggle" data-bs-toggle="dropdown">
                                   Profile
                                 </button>
                                 <ul class="dropdown-menu">
-                                  <li><a style="color: black; margin-left: 5px;" href="{% url 'profile' %}">Profile</a></li>
-                                  <li><a style="color: rgb(161, 160, 160); margin-left: 5px;" href="{% url 'logout' %}">Logout</a></li>
+                                  <li><a style="color: black; margin-left: 5px; font-size: small;" href="{% url 'profile' %}">Profile</a></li>
+                                  <li><a style="color: rgb(161, 160, 160); margin-left: 5px; font-size: small;" href="{% url 'logout' %}">Logout</a></li>
                                 </ul>
                               </div>
                                 

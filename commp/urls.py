@@ -47,7 +47,11 @@ urlpatterns = [
 
     path('expert/', include('expert.urls')),
 
+    # flashcards
     path('flashcard/',include('flashcard.urls')),
+
+    # discussion board
+    path('discussionboard/',include('disboard.urls')),
 
     
 
