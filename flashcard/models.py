@@ -19,6 +19,7 @@ class ItemFC(models.Model):
     thumbnail = models.ImageField(upload_to='media', default="c.png")  
     article = models.ImageField(upload_to='media', null=True, blank=True)  
     article_viewtype = models.ForeignKey(Genre, on_delete=models.CASCADE,default=None, null=True)
+    article_type = models.CharField(max_length=500, default=None, blank=True)
     fav = models.ManyToManyField(User, related_name='fav', default=None, blank=True)
 
     def get_absolute_url(self):

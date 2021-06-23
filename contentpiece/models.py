@@ -29,7 +29,7 @@ class Item(models.Model):
     thumbnail = models.ImageField(upload_to='media', default="c.png")  
     # articlelink = EmbedVideoField(default='https://www.youtube.com/watch?v=J3MuH6xaDjI&t=493s', blank=True)
     item_article = models.FileField(upload_to='media')
-    article_type = models.CharField(max_length=100, default=None, blank=True)
+    article_type = models.CharField(max_length=500, default=None, blank=True)
     topic = models.ForeignKey(Category, on_delete=models.CASCADE,default=None)
     article_viewtype = models.ForeignKey(Genre, on_delete=models.CASCADE,default=None, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
