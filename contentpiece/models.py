@@ -42,7 +42,7 @@ class Item(models.Model):
     liked = models.ManyToManyField(User, related_name='liked', default=None, blank=True)
     favourite = models.ManyToManyField(User, related_name='favourite', default=None, blank=True)
     language_of_instruction = models.CharField(max_length=100, null=True, blank=True)
-    # price_cost = models.ForeignKey(PriceCategory, on_delete=models.CASCADE, default=1)
+    
  
     
     def get_absolute_url(self):
