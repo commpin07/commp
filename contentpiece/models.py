@@ -13,7 +13,11 @@ class Category(models.Model):
 
     category_name = models.CharField(max_length=256)
 
+class PriceCategory(models.Model):
+    def __str__(self):
+        return self.price_category
 
+    price_category = models.CharField(max_length=100)        
     
 class Genre(models.Model):
     def __str__(self):
