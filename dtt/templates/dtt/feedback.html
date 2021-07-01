@@ -1,0 +1,38 @@
+% extends 'contentpiece/base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row g-5">
+        <div class="col">
+            <div class="container mb-3">
+                <h1 class="font-weight-bold mt-3">What's your Decision?</h1>
+    
+                <hr>
+                <h2>{{ item.item_name }}</h2>
+                <h5 style="font-weight: normal;">{{ item.item_description}}</h5>
+                <hr>
+                <h2>Your Decision is: </h2>
+                <h5 style="font-weight: normal;">{{ item.answer}}</h5>
+                {{item.option1}} <br>
+                {{item.feedback1}} <br>
+
+                {{item.option2}} <br>
+                {{item.feedback2}} <br>
+
+                {{item.option3}} <br>   
+                {{item.feedback3}} <br>
+
+                <br><br>
+                
+                
+                <a href="{% url 'dtt:index' %}" class="btn btn-success">Attempt more scenarios</a>
+                <a href="{% url 'dtt:suggestions' %}" class="btn btn-success">Suggestion</a>
+                
+                
+            </div> 
+        </div>
+        </div>
+    </div>
+    
+
+{% endblock %}

@@ -53,6 +53,9 @@ urlpatterns = [
     # discussion board
     path('discussionboard/',include('disboard.urls')),
 
+    # decision tree
+    path('dt/', include('dtt.urls')),
+
     
 
     # forgot password
