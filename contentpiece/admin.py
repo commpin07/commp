@@ -14,7 +14,7 @@ admin.site.register(Item)
 admin.site.register(Genre)
 admin.site.register(Like)
 admin.site.register(Comment)
-# admin.site.register(PriceCategory)
+admin.site.register(PriceCategory)
 
 
 
