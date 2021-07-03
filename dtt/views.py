@@ -50,6 +50,11 @@ def update_item(request,id):
     global count
     count += 1
     print(count)
+    with open('dtt/countdtt.txt', 'w') as f:
+        
+        item_list = str(count)
+       
+        f.write(item_list)
 
     if form.is_valid():
         form.save()
