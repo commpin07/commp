@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+count = 1
+
 def index(request):
     item_list = Item.objects.all().order_by('-id')
     p = Paginator(item_list, 9)
@@ -45,6 +47,9 @@ def feedback(request,id):
 def update_item(request,id):
     item = Item.objects.get(pk=id)
     form = ItemAnswerForm(request.POST, instance=item)
+    global count
+    count += 1
+    print(count)
 
     if form.is_valid():
         form.save()
