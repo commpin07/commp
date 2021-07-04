@@ -36,6 +36,8 @@ class Item(models.Model):
     answer = models.CharField(max_length=20, default=1)
     category = models.CharField(max_length=256, blank=True, default=None)
     thumbnail = models.ImageField(upload_to='media', default="c.png")  
+    answer_count = models.IntegerField(default=1)
+
 
 class Suggestion(models.Model):
     def __str__(self):
