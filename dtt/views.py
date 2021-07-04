@@ -5,11 +5,10 @@ from django.views.generic.detail import DetailView
 from .forms import ItemAnswerForm, SuggestionForm
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
-
+from django.db.models import F
 
 # Create your views here.
 
-count = 1
 
 def index(request):
     item_list = Item.objects.all().order_by('-id')
@@ -47,18 +46,9 @@ def feedback(request,id):
 @login_required
 def update_item(request,id):
     item = Item.objects.get(pk=id)
-    
     form = ItemAnswerForm(request.POST, instance=item)
-    global count
-    count += 1
-    print(count)
-
-    with open('dtt/countdtt.txt', 'w') as f:
-        
-        item_list = str(count)
-       
-        f.write(item_list)
-        
+    item.answer_count = F('answer_count') + 1
+    item.save()
 
     if form.is_valid():
         form.save()
