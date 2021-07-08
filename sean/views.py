@@ -85,10 +85,10 @@ def feedback(request,id):
     #     if word not in stopwords.words('english'):
     #         final_words.append(word)
 
-    # lemma_words = []
-    # for word in final_words:
-    #     word = WordNetLemmatizer().lemmatize(word)
-    #     lemma_words.append(word)
+    lemma_words = []
+    for word in final_words:
+        word = WordNetLemmatizer().lemmatize(word)
+        lemma_words.append(word)
         
     
     # emotion_list = {}
@@ -135,7 +135,7 @@ def feedback(request,id):
     
     
     # return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})  
-    return render(request, 'sean/feedback.html',{'itemli':itemli, 'final_words':final_words})  
+    return render(request, 'sean/feedback.html',{'itemli':itemli, 'lemma_words':lemma_words})  
 
     
 def suggestions(request):
