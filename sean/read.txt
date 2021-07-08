@@ -1,1 +1,1 @@
-('I love Tanya Singh! But she ignores me. I was elated when she got a job at Reliance.',)
+('I love Tanya Singh!',)

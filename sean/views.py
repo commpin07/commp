@@ -47,25 +47,19 @@ def feedback(request,id):
     itemli = Item.objects.get(id=id)
     item = Item.objects.values_list('item_answer').get(id=id)
     
-    with open('sean/read.txt', 'w') as f:
+    # with open('sean/read.txt', 'w') as f:
         
-        item_list = str(item)
+    #     item_list = str(item)
        
-        f.write(item_list)
+    #     f.write(item_list)
 
-    text = open('sean/read.txt').read() 
-    lower_case = text.lower()   
-    cleaned_text = lower_case.translate(str.maketrans('', '', string.punctuation))
+    # text = open('sean/read.txt').read() 
+    # lower_case = text.lower()   
+    # cleaned_text = lower_case.translate(str.maketrans('', '', string.punctuation))
     
-    # to read .txt file and render to template
-
-    # f = open('sean/test.txt', 'r')
-    # file_contents = f.read()
-    # f.close()
-    # return HttpResponse(file_contents)
     
     # tokenized_words = cleaned_text.split()
-    tokenized_words = word_tokenize(cleaned_text, "english")
+    # tokenized_words = word_tokenize(cleaned_text, "english")
     # print(tokenized_words)
 
     # stop_words = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself",
@@ -84,17 +78,17 @@ def feedback(request,id):
     #     if word not in stop_words:
     #         final_words.append(word)
 
-    # print(final_words)        
+         
 
-    final_words = []
-    for word in tokenized_words:
-        if word not in stopwords.words('english'):
-            final_words.append(word)
+    # final_words = []
+    # for word in tokenized_words:
+    #     if word not in stopwords.words('english'):
+    #         final_words.append(word)
 
-    lemma_words = []
-    for word in final_words:
-        word = WordNetLemmatizer().lemmatize(word)
-        lemma_words.append(word)
+    # lemma_words = []
+    # for word in final_words:
+    #     word = WordNetLemmatizer().lemmatize(word)
+    #     lemma_words.append(word)
         
     
     # emotion_list = {}
@@ -109,39 +103,39 @@ def feedback(request,id):
 
     
 
-    emotion_list = {}
-    with open('sean/emotions.txt', 'r') as file:
-        for line in file:
-            clear_line = line.replace("\n", '').replace(",", '').replace("'", '').strip()
-            word, emotion = clear_line.split(':')
-            d = {word:emotion}
-            if word in lemma_words:
-                emotion_list.update(d)
+    # emotion_list = {}
+    # with open('sean/emotions.txt', 'r') as file:
+    #     for line in file:
+    #         clear_line = line.replace("\n", '').replace(",", '').replace("'", '').strip()
+    #         word, emotion = clear_line.split(':')
+    #         d = {word:emotion}
+    #         if word in lemma_words:
+    #             emotion_list.update(d)
 
 
-    with open('sean/test.txt', 'w') as f:
+    # with open('sean/test.txt', 'w') as f:
         
-        item_lis = str(emotion_list)
+    #     item_lis = str(emotion_list)
        
-        f.write(item_lis)
+    #     f.write(item_lis)
 
-    f = open('sean/test.txt', 'r')
-    file_contents = f.read()
-    f.close()    
+    # f = open('sean/test.txt', 'r')
+    # file_contents = f.read()
+    # f.close()    
 
     
 
-    print(emotion_list)
+    # print(emotion_list)
 
-    if (len(emotion_list) == 0):
-        return render(request, 'sean/sorry.html',{'itemli':itemli})  
-    else:
-        return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})      
+    # if (len(emotion_list) == 0):
+    #     return render(request, 'sean/sorry.html',{'itemli':itemli})  
+    # else:
+    #     return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})      
     
     
     
     # return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})  
-    # return render(request, 'sean/feedback.html',{'itemli':itemli})  
+    return render(request, 'sean/feedback.html',{'itemli':itemli})  
 
     
 def suggestions(request):
