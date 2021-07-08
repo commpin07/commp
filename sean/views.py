@@ -135,7 +135,7 @@ def feedback(request,id):
     
     
     # return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})  
-    return render(request, 'sean/feedback.html',{'itemli':itemli})  
+    return render(request, 'sean/feedback.html',{'itemli':itemli, 'cleaned_text':cleaned_text})  
 
     
 def suggestions(request):
