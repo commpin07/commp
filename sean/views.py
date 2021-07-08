@@ -58,8 +58,8 @@ def feedback(request,id):
     cleaned_text = lower_case.translate(str.maketrans('', '', string.punctuation))
     
     
-    # tokenized_words = cleaned_text.split()
-    tokenized_words = word_tokenize(cleaned_text, "english")
+    tokenized_words = cleaned_text.split()
+    # tokenized_words = word_tokenize(cleaned_text, "english")
     # print(tokenized_words)
 
     # stop_words = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself",
