@@ -6,7 +6,7 @@ from django.views.generic.detail import DetailView
 from .forms import ItemAnswerForm, SuggestionForm
 from django.db.models import F
 import string
-
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 
 
@@ -22,6 +22,7 @@ class ContentDetail(DetailView):
        model = Item
        template_name = 'sean/detail.html'
 
+# @login_required
 def update_item(request,id):
     item = Item.objects.get(pk=id)
     form = ItemAnswerForm(request.POST, instance=item)
@@ -96,11 +97,6 @@ def feedback(request,id):
     else:
         return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})      
     
-    
-    
-    # return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})  
-    # return render(request, 'sean/feedback.html',{'itemli':itemli, 'emotion_list':emotion_list})  
-
     
 def suggestions(request):
     

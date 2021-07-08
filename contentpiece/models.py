@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import CharField
 from embed_video.fields import EmbedVideoField
 from django.contrib.auth.models import User
 from django.urls import reverse
@@ -18,7 +19,13 @@ class Genre(models.Model):
     def __str__(self):
         return self.genre_name
 
-    genre_name = models.CharField(max_length=100)       
+    genre_name = models.CharField(max_length=100)   
+
+class Price_Category(models.Model):
+    def __str__(self):
+        return self.price_name
+
+    price_name = models.CharField(max_length=50)           
 
 class Item(models.Model):
     def __str__(self):
