@@ -90,9 +90,6 @@ def feedback(request,id):
     file_contents = f.read()
     f.close()    
 
-    
-
-    # print(emotion_list)
 
     if (len(emotion_list) == 0):
         return render(request, 'sean/sorry.html',{'itemli':itemli})  
