@@ -59,7 +59,7 @@ def feedback(request,id):
     
     
     # tokenized_words = cleaned_text.split()
-    # tokenized_words = word_tokenize(cleaned_text, "english")
+    tokenized_words = word_tokenize(cleaned_text, "english")
     # print(tokenized_words)
 
     # stop_words = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself",
@@ -80,10 +80,10 @@ def feedback(request,id):
 
          
 
-    # final_words = []
-    # for word in tokenized_words:
-    #     if word not in stopwords.words('english'):
-    #         final_words.append(word)
+    final_words = []
+    for word in tokenized_words:
+        if word not in stopwords.words('english'):
+            final_words.append(word)
 
     # lemma_words = []
     # for word in final_words:
@@ -135,7 +135,7 @@ def feedback(request,id):
     
     
     # return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})  
-    return render(request, 'sean/feedback.html',{'itemli':itemli, 'cleaned_text':cleaned_text})  
+    return render(request, 'sean/feedback.html',{'itemli':itemli, 'final_Words':final_words})  
 
     
 def suggestions(request):
