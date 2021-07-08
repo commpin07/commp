@@ -6,17 +6,8 @@ from django.views.generic.detail import DetailView
 from .forms import ItemAnswerForm, SuggestionForm
 from django.db.models import F
 import string
-import csv
+
 from django.shortcuts import render_to_response
-from collections import Counter
-
-from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
-
-
-
-# import matplotlib.pyplot as plt
 
 
 
@@ -59,8 +50,7 @@ def feedback(request,id):
     
     
     tokenized_words = cleaned_text.split()
-    # tokenized_words = word_tokenize(cleaned_text, "english")
-    # print(tokenized_words)
+    
 
     stop_words = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself",
               "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself", "it", "its", "itself",
@@ -78,18 +68,6 @@ def feedback(request,id):
         if word not in stop_words:
             final_words.append(word)
 
-         
-
-    # final_words = []
-    # for word in tokenized_words:
-    #     if word not in stopwords.words('english'):
-    #         final_words.append(word)
-
-    # lemma_words = []
-    # for word in final_words:
-    #     word = WordNetLemmatizer().lemmatize(word)
-    #     lemma_words.append(word)
-        
     
     emotion_list = {}
     with open('sean/emotions.txt', 'r') as f:
@@ -102,40 +80,29 @@ def feedback(request,id):
                 emotion_list.update(d)
 
     
-
-    # emotion_list = {}
-    # with open('sean/emotions.txt', 'r') as file:
-    #     for line in file:
-    #         clear_line = line.replace("\n", '').replace(",", '').replace("'", '').strip()
-    #         word, emotion = clear_line.split(':')
-    #         d = {word:emotion}
-    #         if word in lemma_words:
-    #             emotion_list.update(d)
-
-
-    # with open('sean/test.txt', 'w') as f:
+    with open('sean/test.txt', 'w') as f:
         
-    #     item_lis = str(emotion_list)
+        item_lis = str(emotion_list)
        
-    #     f.write(item_lis)
+        f.write(item_lis)
 
-    # f = open('sean/test.txt', 'r')
-    # file_contents = f.read()
-    # f.close()    
+    f = open('sean/test.txt', 'r')
+    file_contents = f.read()
+    f.close()    
 
     
 
     # print(emotion_list)
 
-    # if (len(emotion_list) == 0):
-    #     return render(request, 'sean/sorry.html',{'itemli':itemli})  
-    # else:
-    #     return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})      
+    if (len(emotion_list) == 0):
+        return render(request, 'sean/sorry.html',{'itemli':itemli})  
+    else:
+        return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})      
     
     
     
     # return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})  
-    return render(request, 'sean/feedback.html',{'itemli':itemli, 'emotion_list':emotion_list})  
+    # return render(request, 'sean/feedback.html',{'itemli':itemli, 'emotion_list':emotion_list})  
 
     
 def suggestions(request):
