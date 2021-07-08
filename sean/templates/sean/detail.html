@@ -1,0 +1,18 @@
+{% block body %}
+
+
+
+<h1>{{ item.item_name }}</h1>
+<h1>{{ item.item_description}}</h1>
+
+<h1>Your decision</h1>
+{{item.item_answer}}
+
+
+
+<a href="{% url 'sean:feedback' item.id %}">feedback</a>     
+            
+
+ 
+
+{% endblock %}

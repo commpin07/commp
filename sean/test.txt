@@ -1,0 +1,1 @@
+{'love': ' happy', 'ignores': 'sad', 'elated': ' happy'}

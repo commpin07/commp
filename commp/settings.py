@@ -51,6 +51,7 @@ INSTALLED_APPS = [
    'expert',
     'disboard',
     'dtt',
+    'sean',
     
 ]
 

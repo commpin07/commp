@@ -1,0 +1,16 @@
+{% block body %}
+
+
+<h1>{{ itemli.item_name }}</h1>
+<h1>{{ itemli.item_description}}</h1>
+
+{{itemli.item_answer}}
+
+
+<h1>{{file_contents}}</h1>
+
+<a href="{% url 'sean:index' %}">Attempt</a>
+<a href="{% url 'sean:suggestions' %}">Suggestion</a>
+
+
+{% endblock %}

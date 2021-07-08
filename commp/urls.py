@@ -56,6 +56,9 @@ urlpatterns = [
     # decision tree
     path('dt/', include('dtt.urls')),
 
+    # sean 
+    path('sean/',include('sean.urls')),
+
     
 
     # forgot password

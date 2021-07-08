@@ -1,0 +1,11 @@
+{% for item in item_list %}
+
+<h1>{{ item.item_name }}</h1>
+<h2>{{ item.item_description }}</h2>
+
+
+<a href="{% url 'sean:update_item' item.id %}">View</a>
+
+
+
+{% endfor %}
