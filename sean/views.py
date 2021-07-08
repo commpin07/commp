@@ -47,15 +47,15 @@ def feedback(request,id):
     itemli = Item.objects.get(id=id)
     item = Item.objects.values_list('item_answer').get(id=id)
     
-    # with open('sean/read.txt', 'w') as f:
+    with open('sean/read.txt', 'w') as f:
         
-    #     item_list = str(item)
+        item_list = str(item)
        
-    #     f.write(item_list)
+        f.write(item_list)
 
-    # text = open('sean/read.txt').read() 
-    # lower_case = text.lower()   
-    # cleaned_text = lower_case.translate(str.maketrans('', '', string.punctuation))
+    text = open('sean/read.txt').read() 
+    lower_case = text.lower()   
+    cleaned_text = lower_case.translate(str.maketrans('', '', string.punctuation))
     
     
     # tokenized_words = cleaned_text.split()
