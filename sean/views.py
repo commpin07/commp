@@ -8,6 +8,7 @@ from django.db.models import F
 import string
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
+from django.core.paginator import Paginator
 
 
 
@@ -15,8 +16,16 @@ from django.shortcuts import render_to_response
 
 
 def index(request):
-    item_list = Item.objects.all()
-    return render(request, 'sean/index.html', {'item_list':item_list})
+    item_list = Item.objects.all().order_by('-id')
+    p = Paginator(item_list, 9)
+    page = request.GET.get('page')
+    item_list = p.get_page(page)
+    user = request.user
+    context= {
+		'item_list':item_list,
+		'user': user,
+	}
+    return render(request, 'sean/index.html', context)
 
 class ContentDetail(DetailView):
        model = Item
@@ -104,5 +113,5 @@ def suggestions(request):
 
     if form.is_valid():
         form.save()
-        return redirect('dtt:index')
-    return render(request, 'dtt/suggestion_form.html', {'form':form})     
+        return redirect('sean:index')
+    return render(request, 'sean/suggestion_form.html', {'form':form})     

@@ -1,21 +1,40 @@
+{% extends 'contentpiece/base.html' %}
 {% block body %}
 
-
-
-<h1>{{ item.item_name }}</h1>
-<h1>{{ item.item_description}}</h1>
-
-
-<h1>Your decision</h1>
-
-
-<form enctype="multipart/form-data" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class='btn btn-success' type="submit">Submit</button> <br><br>
-
+<div class="container">
+    <div class="row g-5">
+        <div class="col">
+            <div class="container mb-3">
+                <h1 class="font-weight-bold mt-3">SeAn</h1>
+    
+                <hr>
+                <h2>{{ item.item_name }}</h2>
+                <h5 style="font-weight: normal;">{{ item.item_description}}</h5> <p></p>
         
+                <hr>
 
 
+                <br>
+                <h2>How will you respond?</h2>
+                <hr>
+                <form enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    
+                    <button class='btn btn-success' type="submit">Submit</button> <br><br><br>
+                    
+                </form>
+            </div> 
+        </div>
+        </div>
+    </div>
+    
 
 {% endblock %}
+
+
+
+
+
+
+

@@ -1,11 +1,33 @@
+
+
+
+
+{% extends 'contentpiece/base.html' %}
 {% block body %}
 
-
-
-<form enctype="multipart/form-data" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class='btn btn-success' type="submit">Save</button> <br><br>
-
+<div class="container">
+    <div class="row g-5">
+        <div class="col">
+            <div class="container mb-3">
+                <h2 class="font-weight-bold mt-3">Sugesstions for Scenarios</h2>
+                <p>If you want us to cover any particular scenario or more scenrios of a particular kind, please share your suggestions.</p>
+                <p>We would also love to hear your experience of using the Sentiment Analysis feature. </p>
+                <hr>
+                <form enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class='btn btn-success' type="submit">Submit</button> <br><br>
+                    
+                </form>
+            </div> 
+        </div>
+        </div>
+    </div>
+    
 
 {% endblock %}
+
+
+
+
+

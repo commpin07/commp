@@ -1,18 +1,52 @@
+{% extends 'contentpiece/base.html' %}
 {% block body %}
 
+<div class="container">
+    <div class="row g-5">
+        <div class="col">
+            <div class="container mb-3">
+                <h1 class="font-weight-bold mt-3">SeAn</h1>
+    
+                <hr>
+                <h2>{{itemli.item_name}}</h2>
+                
+                <h5 style="font-weight: normal;">{{itemli.item_description}}</h5><p></p>
+                
+                <hr>
 
-<h1>{{ itemli.item_name }}</h1>
-<h1>{{ itemli.item_description}}</h1>
+                <br>
+                <h2>Your Response is:</h2>
+                <hr>
+                <h5 style="font-weight: normal;">{{ itemli.item_answer}}</h5> <br>
+                <h5 style="font-weight: lighter;">Feedback: Please find below the list of words and the emotions they have evoked.</h5>
+                <h5 style="font-weight: bold;">{{file_contents}}</h5>
 
-{{itemli.item_answer}}
-
-
-<h1>{{file_contents}}</h1>
-
-
-
-<a href="{% url 'sean:index' %}">Attempt</a>
-<a href="{% url 'sean:suggestions' %}">Suggestion</a>
-
+                <br>
+                
+                <a href="{% url 'sean:index' %}" class="btn btn-success">Attempt more Scenarios</a>
+                <a href="{% url 'sean:suggestions' %}" class="btn btn-success">Suggestions for Scenarios</a> 
+                <br><br>
+                
+                
+            </div> 
+        </div>
+        </div>
+    </div> <br>
+    
 
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

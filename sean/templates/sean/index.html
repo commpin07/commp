@@ -1,11 +1,81 @@
-{% for item in item_list %}
-
-<h1>{{ item.item_name }}</h1>
-<h2>{{ item.item_description }}</h2>
+{% extends 'contentpiece/base.html' %}
 
 
-<a href="{% url 'sean:update_item' item.id %}">View</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    
+    {% block body %}
+        
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>SeAn</h2>
+                <h6>Check out the emotions & sentiments being evoked by your choice of words by using our Sentiment Analysis tool - SeAn.</h6>
+                
+                <a href="{% url 'sean:suggestions' %}" class="btn btn-success">Suggestions for Scenarios</a> 
+                <hr>
+            </div>
+        </div>
+
+    
+    
+    <!-- Displaying items -->
+    
+    {% for item in item_list %}
+    
+  <div class="row">
+        <div class="col-md-3 offset-md-2">
+            <img width="180px" height="180px" src="{{ item.thumbnail.url }}">
+        </div>
+        <div class="col-md-4">
+            <h2 style="margin-left: 36px;">{{item.item_name}}</h2>
+            <h5 style="font-size: small; margin-left: 36px; color: grey;">{{item.item_description}}</h5>
+            
+            
+        </div>
+        
+        <div class="col-md-2">
+            <a href="{% url 'sean:update_item' item.id %}" class="btn btn-success">View</a> <br>
+        </div>
+            
+  </div><br>
+    
+    {% endfor %}
+    
+    
+    <!-- pagination -->
+
+    <div class="container">
+        {% if item_list.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ item_list.previous_page_number }}">Previous</a>
+    {% endif %}
+    Page: {{ item_list.number }} of {{ item_list.paginator.num_pages }}
+    {% if item_list.has_next %}
+        <a href="?page={{ item_list.next_page_number }}">Next</a>
+        <a href="?page={{ item_list.paginator.num_pages }}">Last</a>
+    {% endif %}    
+    </div><br><br><br>
+
+   {% endblock %}
+    
+
+
+</body>
+</html>
 
 
 
-{% endfor %}
+
+
