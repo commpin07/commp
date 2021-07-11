@@ -30,13 +30,14 @@
                         {% endif %} -->
                         <a class="btn btn" style="color: black;" href="{% url 'sean:index' %}">SeAn</a>  
                         <a class="btn btn" style="color: black;" href="{% url 'dtt:index' %}">What's Your Decision?</a>
+                        <a class="btn btn" style="color: black;" href="{% url 'flashcard:index' %}">Flash Cards</a>
                         <!-- <a class="btn btn-link" style="color: black;" href="{% url 'disboard:index' %}">Discussion Boards</a> -->
                         
                         <!-- <a class="nav-link" href="{% url 'expert:expertView' %}"><h5 style="font-size: medium; color: black;">Expert Corner</h5></a>  -->
                        
                         
 
-                        <div class="dropdown">
+                        <!-- <div class="dropdown">
                             <button class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown">
                               Quick Resources
                             </button>
@@ -44,7 +45,7 @@
                               <li><a style="color: black; margin-left: 5px; font-size: small;" href="{% url 'flashcard:index' %}">Flash Cards</a></li>
                               <li><a style="color: black; margin-left: 5px; font-size: small;" href="{% url 'disboard:index' %}">Discussion Boards</a></li>
                             </ul>
-                          </div>
+                          </div> -->
 
                         {% if user.is_authenticated %}
                             <div class="dropdown">
