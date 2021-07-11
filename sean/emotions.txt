@@ -209,6 +209,7 @@
  'impotent': 'powerless',
  'imprisoned': 'entitled',
  'in a huff': 'angry',
+ 'unanimous': 'team player',
  'in a stew': 'angry',
  'in control': 'adequate',
  'in fear': 'fearful',
