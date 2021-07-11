@@ -1,8 +1,8 @@
-'selected': 'happy',
+ 'selected': 'happy',
 
-'re-energized': 'confidence',
-'elderly': 'empathy',
-'questionnaire': 'process oriented',
+ 're-energized': 'confidence',
+ 'elderly': 'empathy',
+ 'questionnaire': 'process oriented',
  'mingling': 'has drive to succeed’,
 'victimized': 'cheated',
  'accused': 'cheated',
