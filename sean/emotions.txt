@@ -1,5 +1,5 @@
 'selected': 'happy',
-'married': 'happy',
+
 're-energized': 'confidence',
 'elderly': 'empathy',
 'questionnaire': 'process oriented',
