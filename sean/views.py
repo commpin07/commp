@@ -98,13 +98,14 @@ def feedback(request,id):
 
     f = open('sean/test.txt', 'r')
     file_contents = f.read()
-    f.close()    
+    f.close()  
+    str_q = str(file_contents)[1 : -1]  
 
 
     if (len(emotion_list) == 0):
         return render(request, 'sean/sorry.html',{'itemli':itemli})  
     else:
-        return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})      
+        return render(request, 'sean/feedback.html',{'itemli':itemli, 'str_q':str_q})      
     
     # return render(request, 'sean/feedback.html',{'itemli':itemli, 'emotion_list':emotion_list})      
 
