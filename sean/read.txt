@@ -1,1 +1,1 @@
-('I was elated when she got job at Reliance',)
+('The server encountered an internal error or misconfiguration and was unable to complete your request.\r\n\r\nPlease contact the server administrator at root@localhost to inform them of the time this error occurred, and the actions you performed just before this error.\r\n\r\nMore information about this error may be available in the server error log.',)
