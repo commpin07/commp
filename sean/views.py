@@ -89,27 +89,24 @@ def feedback(request,id):
             if word in final_words:
                 emotion_list.update(d)
 
-
-
-
     
-    # with open('sean/test.txt', 'w') as f:
+    with open('sean/test.txt', 'w') as f:
         
-    #     item_lis = str(emotion_list)
+        item_lis = str(emotion_list)
        
-    #     f.write(item_lis)
+        f.write(item_lis)
 
-    # f = open('sean/test.txt', 'r')
-    # file_contents = f.read()
-    # f.close()    
+    f = open('sean/test.txt', 'r')
+    file_contents = f.read()
+    f.close()    
 
 
-    # if (len(emotion_list) == 0):
-    #     return render(request, 'sean/sorry.html',{'itemli':itemli})  
-    # else:
-    #     return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})      
+    if (len(emotion_list) == 0):
+        return render(request, 'sean/sorry.html',{'itemli':itemli})  
+    else:
+        return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})      
     
-    return render(request, 'sean/feedback.html',{'itemli':itemli, 'emotion_list':emotion_list})      
+    # return render(request, 'sean/feedback.html',{'itemli':itemli, 'emotion_list':emotion_list})      
 
 def suggestions(request):
     
