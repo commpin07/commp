@@ -62,21 +62,21 @@ def feedback(request,id):
     tokenized_words = cleaned_text.split()
     
 
-    # stop_words = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself",
-    #           "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself", "it", "its", "itself",
-    #           "they", "them", "their", "theirs", "themselves", "what", "which", "who", "whom", "this", "that", "these",
-    #           "those", "am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", "having", "do",
-    #           "does", "did", "doing", "a", "an", "the", "and", "or", "because", "as",
-    #           "of", "at", "by", "for", "with", "about", "against", "into", "through", "during", "before",
-    #           "after", "above", "below", "to", "from", "up", "down", "in", "out", "on", "off", "over", "under", "again",
-    #           "further", "then", "once", "here", "there", "when", "where", "why", "how", "all", "any", "both", "each",
-    #           "few", "other", "some", "such", "no", "nor", "not", "only", "own", "same", "so", "than",
-    #           "too", "very", "s", "t", "can", "will", "just", "don", "now"]
+    stop_words = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself",
+              "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself", "it", "its", "itself",
+              "they", "them", "their", "theirs", "themselves", "what", "which", "who", "whom", "this", "that", "these",
+              "those", "am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", "having", "do",
+              "does", "did", "doing", "a", "an", "the", "and", "or", "because", "as",
+              "of", "at", "by", "for", "with", "about", "against", "into", "through", "during", "before",
+              "after", "above", "below", "to", "from", "up", "down", "in", "out", "on", "off", "over", "under", "again",
+              "further", "then", "once", "here", "there", "when", "where", "why", "how", "all", "any", "both", "each",
+              "few", "other", "some", "such", "no", "nor", "not", "only", "own", "same", "so", "than",
+              "too", "very", "s", "t", "can", "will", "just", "don", "now"]
 
-    # final_words = []
-    # for word in tokenized_words:
-    #     if word not in stop_words:
-    #         final_words.append(word)
+    final_words = []
+    for word in tokenized_words:
+        if word not in stop_words:
+            final_words.append(word)
 
     
     # emotion_list = {}
@@ -106,7 +106,7 @@ def feedback(request,id):
     # else:
     #     return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})      
     
-    return render(request, 'sean/feedback.html',{'itemli':itemli, 'tokenized_words':tokenized_words})      
+    return render(request, 'sean/feedback.html',{'itemli':itemli, 'final_words':final_words})      
 
 def suggestions(request):
     
