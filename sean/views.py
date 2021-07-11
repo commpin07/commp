@@ -79,16 +79,18 @@ def feedback(request,id):
             final_words.append(word)
 
     
-    emotion_list = []
+    emotion_list = {}
     with open('sean/emotions.txt', 'r') as f:
         for line in f:
-            clear_line = line.replace("\n", '').replace(",", '').replace("'", '').strip()
+            clear_line = line.replace("\n",'').replace(",",'').replace("'",'').strip()
             word, emotion = clear_line.split(':')
-            # d = {word:emotion}
-            
+            d = {word - emotion}
+
             if word in final_words:
-                # emotion_list.update(d)
-                emotion_list.append(emotion)
+                emotion_list.update(d)
+
+
+
 
     
     # with open('sean/test.txt', 'w') as f:
