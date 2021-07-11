@@ -79,15 +79,15 @@ def feedback(request,id):
             final_words.append(word)
 
     
-    # emotion_list = {}
-    # with open('sean/emotions.txt', 'r') as f:
-    #     for line in f:
-    #         clear_line = line.replace("\n", '').replace(",", '').replace("'", '').strip()
-    #         word, emotion = clear_line.split(':')
-    #         d = {word:emotion}
+    emotion_list = {}
+    with open('sean/emotions.txt', 'r') as f:
+        for line in f:
+            clear_line = line.replace("\n", '').replace(",", '').replace("'", '').strip()
+            word, emotion = clear_line.split(':')
+            d = {word:emotion}
             
-    #         if word in final_words:
-    #             emotion_list.update(d)
+            if word in final_words:
+                emotion_list.update(d)
 
     
     # with open('sean/test.txt', 'w') as f:
@@ -106,7 +106,7 @@ def feedback(request,id):
     # else:
     #     return render(request, 'sean/feedback.html',{'itemli':itemli, 'file_contents':file_contents})      
     
-    return render(request, 'sean/feedback.html',{'itemli':itemli, 'final_words':final_words})      
+    return render(request, 'sean/feedback.html',{'itemli':itemli, 'emotion_list':emotion_list})      
 
 def suggestions(request):
     
