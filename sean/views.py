@@ -95,11 +95,13 @@ def feedback(request,id):
         item_lis = str(emotion_list)
        
         f.write(item_lis)
+        
 
     f = open('sean/test.txt', 'r')
     file_contents = f.read()
     f.close()  
     str_q = str(file_contents)[1 : -1]  
+    
 
 
     if (len(emotion_list) == 0):
