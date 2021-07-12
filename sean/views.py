@@ -90,19 +90,20 @@ def feedback(request,id):
                 emotion_list.update(d)
 
     
-    with open('sean/test.txt', 'w') as f:
+    # with open('sean/test.txt', 'w') as f:
         
-        item_lis = str(emotion_list)
+    #     item_lis = str(emotion_list)
        
-        f.write(item_lis)
+    #     f.write(item_lis)
         
 
-    f = open('sean/test.txt', 'r')
-    file_contents = f.read()
-    f.close()  
-    str_q = str(file_contents)[1 : -1]  
+    # f = open('sean/test.txt', 'r')
+    # file_contents = f.read()
+    # f.close()  
     
 
+    zjs = str(emotion_list).replace(',','---')
+    str_q = str(zjs)[1 : -1]
 
     if (len(emotion_list) == 0):
         return render(request, 'sean/sorry.html',{'itemli':itemli})  

@@ -1,1 +1,1 @@
-{'questionnaire': ' process oriented', 'mingle': ' has the drive to succeed'}
+{'critical': ' logical', 'clearly': ' clarity of thought', 'first': ' structured', 'second': ' structured', 'third': ' structured', 'fourth': ' structured', 'communicating': ' clarity of thought', 'stakeholders': ' team player', 'urgency': ' clarity of thought', 'enthusiasm': ' passion', 'expectations': ' farsightedness', 'prioritising': ' clarity of thought', 'delegating': ' team player', 'coordination': ' focused'}
