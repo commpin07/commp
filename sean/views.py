@@ -102,7 +102,7 @@ def feedback(request,id):
     # f.close()  
     
 
-    zjs = str(emotion_list).replace(',','---')
+    zjs = str(emotion_list).replace(',',' ... ')
     str_q = str(zjs)[1 : -1]
 
     if (len(emotion_list) == 0):
