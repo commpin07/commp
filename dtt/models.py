@@ -5,7 +5,7 @@ class Option(models.Model):
     def __str__(self):
         return self.option_text
 
-    option_text = models.CharField(max_length=100)
+    option_text = models.CharField(max_length=300)
 
 class Feedback(models.Model):
     def __str__(self):
