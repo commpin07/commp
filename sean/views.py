@@ -31,7 +31,7 @@ class ContentDetail(DetailView):
        model = Item
        template_name = 'sean/detail.html'
 
-@login_required
+# @login_required
 def update_item(request,id):
     item = Item.objects.get(pk=id)
     form = ItemAnswerForm(request.POST, instance=item)

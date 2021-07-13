@@ -1,11 +1,12 @@
 from django.urls import path
 from . import views
+from django.contrib.auth.decorators import login_required
 
 app_name = 'dtt'
 urlpatterns = [
     path('', views.index, name='index'),
 
-    path('<int:pk>/', views.ContentDetail.as_view(), name='detail'),
+    path('<int:pk>/', login_required(views.ContentDetail.as_view()), name='detail'),
 
     path('update/<int:id>/', views.update_item, name='update_item'),
 

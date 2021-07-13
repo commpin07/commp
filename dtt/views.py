@@ -32,6 +32,7 @@ class ContentDetail(DetailView):
 #     model = Item
 #     template_name = 'dtt/feedback.html'    
 
+
 def feedback(request,id):
     item = Item.objects.get(id=id)
     if item.answer == "option 1":
@@ -43,7 +44,7 @@ def feedback(request,id):
     return render(request, 'dtt/feedback.html', {'item':item})    
 
 
-@login_required
+# @login_required
 def update_item(request,id):
     item = Item.objects.get(pk=id)
     form = ItemAnswerForm(request.POST, instance=item)
