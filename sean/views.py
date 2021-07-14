@@ -27,20 +27,20 @@ def index(request):
 	}
     return render(request, 'sean/index.html', context)
 
-class ContentDetail(DetailView):
-       model = Item
-       template_name = 'sean/detail.html'
+# class ContentDetail(DetailView):
+#        model = Item
+#        template_name = 'sean/detail.html'
 
-# @login_required
+@login_required
 def update_item(request,id):
-    item = Item.objects.get(pk=id)
+    item = Item.objects.get(id=id)
     form = ItemAnswerForm(request.POST, instance=item)
     item.item_answercount = F('item_answercount') + 1
     item.save()
     
     if form.is_valid():
-        F(form.save())
-        return redirect('sean:detail', pk=item.id)     
+        form.save()
+        return redirect('sean:feedback', id=item.id)     
     return render(request, 'sean/answer_form.html', {'form':form, 'item':item}) 
 
 
@@ -62,7 +62,7 @@ def feedback(request,id):
     tokenized_words = cleaned_text.split()
     
 
-    stop_words = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "you", "your", "yours", "yourself",
+    stop_words = ["i", "me", "my", "myself", "we", "our", "ours", "ourselves", "your", "yours", "yourself",
               "yourselves", "he", "him", "his", "himself", "she", "her", "hers", "herself", "it", "its", "itself",
               "they", "them", "their", "theirs", "themselves", "these",
               "those", "am", "is", "are", "was", "were", "be", "been", "being", "have", "has", "had", "having", "do",

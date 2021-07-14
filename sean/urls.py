@@ -6,7 +6,7 @@ app_name = 'sean'
 urlpatterns = [
     path('', views.index, name='index'),
 
-    path('<int:pk>/', login_required(views.ContentDetail.as_view()), name='detail'),
+    # path('<int:pk>/', login_required(views.ContentDetail.as_view()), name='detail'),
 
     path('update/<int:id>/', views.update_item, name='update_item'),
 

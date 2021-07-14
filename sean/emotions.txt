@@ -415,7 +415,7 @@
  'achieved': 'confidence',
  'questions': 'clarity of thought',
  'asking': 'clarity of thought',
- 'what': 'inclusive',
+ 'you': 'inclusive',
  'think': 'logical',
  'power': 'authority',
  'powerful': 'confidence',
