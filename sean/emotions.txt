@@ -1123,3 +1123,8 @@
  'discontent': 'unhappy',
  'discourage': 'leadership skills',
  'discordant': 'argumentative',
+ 'genuine': 'confidence',
+ 'more': 'beyond expectations',
+ 'guard': 'cautious',
+ 'unreceptive': 'does not care',
+ 'many': 'stop caring',

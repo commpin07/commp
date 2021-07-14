@@ -23,9 +23,9 @@ def index(request):
     return render(request, 'dtt/index.html', context)
     
 
-class ContentDetail(DetailView):
-       model = Item
-       template_name = 'dtt/detail.html'
+# class ContentDetail(DetailView):
+#        model = Item
+#        template_name = 'dtt/detail.html'
 
 
 # class ContentFeedback(DetailView):
@@ -44,16 +44,16 @@ def feedback(request,id):
     return render(request, 'dtt/feedback.html', {'item':item})    
 
 
-# @login_required
+@login_required
 def update_item(request,id):
-    item = Item.objects.get(pk=id)
+    item = Item.objects.get(id=id)
     form = ItemAnswerForm(request.POST, instance=item)
     item.answer_count = F('answer_count') + 1
     item.save()
 
     if form.is_valid():
         form.save()
-        return redirect('dtt:detail',pk=item.id)
+        return redirect('dtt:feedback',id=item.id)
     return render(request, 'dtt/answer_form.html', {'form':form, 'item':item}) 
 
 def suggestions(request):
