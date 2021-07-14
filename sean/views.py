@@ -39,7 +39,7 @@ def update_item(request,id):
     item.save()
     
     if form.is_valid():
-        form.save()
+        F(form.save())
         return redirect('sean:detail', pk=item.id)     
     return render(request, 'sean/answer_form.html', {'form':form, 'item':item}) 
 
