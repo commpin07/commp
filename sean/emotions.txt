@@ -1346,3 +1346,4 @@
  'ready': 'structured',
  'structured': 'structured',
  'all': 'confidence',
+ 'particular': 'attention to detail',
