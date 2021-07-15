@@ -47,7 +47,8 @@
         </div>
         
         <div class="col-md-2">
-            <a href="{% url 'dtt:update_item' item.id %}" class="btn btn-success">View</a> <br>
+            <a href="{% url 'dtt:update_item' item.id %}" class="btn btn-success">View</a> <br><br>
+            <h6 style="font-size: small; color: green; font-weight: lighter;">{{item.answer_count}} response{{item.answer_count|pluralize}}</h6>
         </div>
             
   </div><br>
