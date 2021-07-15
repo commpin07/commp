@@ -15,8 +15,9 @@
 
 
                 <br>
-                <h2>How will you respond?</h2>
+                <h2>Your Response</h2>
                 <hr>
+                <h6>Tip: {{item.tip}}</h6><br>
                 <form enctype="multipart/form-data" method="POST">
                     {% csrf_token %}
                     {{ form.as_p }}

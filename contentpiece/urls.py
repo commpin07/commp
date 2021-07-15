@@ -36,6 +36,9 @@ urlpatterns= [
     # search bar
     path('search/',views.search_item, name='search_item'),
 
+    # about us
+    path('about/', views.about, name='about')
+
     
 
     

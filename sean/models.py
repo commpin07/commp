@@ -12,6 +12,7 @@ class Item(models.Model):
     item_answercount = models.IntegerField(default=1)
     category = models.CharField(max_length=256, blank=True, default="English")
     thumbnail = models.ImageField(upload_to='media', default="c.png")  
+    tip = models.CharField(max_length=300, default="Tip")
 
 
 class Suggestion(models.Model):

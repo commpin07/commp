@@ -167,6 +167,10 @@ def search_item(request):
         'product_count': product_count,
     }
     return render(request, 'contentpiece/search_item.html', context)
+
+
+def about(request):
+	return render(request, 'contentpiece/about.html')	
     
 
 

@@ -9,7 +9,7 @@ import string
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
 from django.core.paginator import Paginator
-
+from collections import Counter
 
 
 # Create your views here.
@@ -69,7 +69,7 @@ def feedback(request,id):
               "does", "did", "doing", "a", "an", "the", "and", "or", "because", "as",
               "of", "at", "by", "for", "with", "about", "against", "into", "through", "during", "before",
               "after", "above", "below", "to", "from", "up", "down", "in", "out", "on", "off", "over", "under", "again",
-              "further", "then", "here", "there", "all", "any", "both", "each",
+              "further", "then", "here", "there", "any", "both", "each",
               "few", "other", "such", "no", "nor", "not", "only", "own", "same", "so", "than",
               "too", "s", "t", "can", "will", "just", "don"]
 
@@ -89,14 +89,30 @@ def feedback(request,id):
             if word in final_words:
                 emotion_list.update(d)
 
+    emotion_c1 = []
+    with open('sean/emotions.txt', 'r') as file:
+        for line in file:
+            clear_line = line.replace("\n", '').replace(",", '').replace("'", '').strip()
+            word, emotion = clear_line.split(':')
+            
+            if word in final_words:
+                emotion_c1.append(emotion)
+
+
+    w = Counter(emotion_c1)
     
+    
+    zjs2 = str(w)
+    str_g = str(zjs2)[9: -2]
+   
+
     zjs = str(emotion_list).replace(',',' ... ')
     str_q = str(zjs)[1 : -1]
 
     if (len(emotion_list) == 0):
         return render(request, 'sean/sorry.html',{'itemli':itemli})  
     else:
-        return render(request, 'sean/feedback.html',{'itemli':itemli, 'str_q':str_q})      
+        return render(request, 'sean/feedback.html',{'itemli':itemli, 'str_q':str_q, 'str_g':str_g})      
     
     # return render(request, 'sean/feedback.html',{'itemli':itemli, 'emotion_list':emotion_list})      
 
