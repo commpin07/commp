@@ -61,9 +61,10 @@
         </div>
         
         <div class="col-md-2">
-            <a href="{% url 'contentpiece:detail' item.id %}" class="btn btn-success">Details</a> <br>
+            <a href="{% url 'contentpiece:detail' item.id %}" class="btn btn-success">Details</a> <br><p></p>
+            <h6 style="font-size: medium; color: #00b03c;">{{item.item_viewcount}} view{{item.item_viewcount|pluralize}}</h6>
         
-            <br>
+            <p></p>
             
             <!-- like dislike -->
         {% if user.is_authenticated %}    
@@ -89,6 +90,8 @@
     </div> -->
     
     {% endfor %}
+
+
     
     
     <!-- pagination -->

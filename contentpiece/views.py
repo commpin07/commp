@@ -11,6 +11,7 @@ from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.db.models import Q 
+from django.db.models import F
 
 
 # Create your views here.
@@ -91,6 +92,8 @@ def delete_item(request, id):
 # To display article items in various genres such as video(play_image), pdf, image(play_pic)
 def video(request,id):
 	item = Item.objects.get(id=id)
+	item.item_viewcount = F('item_viewcount') + 1
+	item.save()
 
 	if item.article_viewtype.id == 1:
 		return render(request, 'contentpiece/play_image.html',{'item':item})
