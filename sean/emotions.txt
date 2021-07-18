@@ -1554,3 +1554,4 @@
  'remember': 'caution',
  'care': 'concerned',
  'ease': 'happy',
+ 'enthusiastically': 'energetic',
