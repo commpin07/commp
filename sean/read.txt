@@ -1,1 +1,1 @@
-('lkkl',)
+('When an interviewer asks this question, he is looking to see your clarity of thought under pressure. Your answer should be - I undertook 4 steps. First - I clearly communicated the urgency & critical nature of the task. Second I prioritised the tasks keeping in mind the resources and time available. Third - I delegated the tasks to the team members and gave them the timelines. Fourth - I regularly followed up with the team mates to ensure everything is going as per schedule.',)
