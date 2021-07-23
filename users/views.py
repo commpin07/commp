@@ -71,7 +71,7 @@ def forgotPassword(request):
                 'token': default_token_generator.make_token(user),
             })
             to_email = email
-            send_email = EmailMessage(mail_subject, message, to=[to_email])
+            send_email = EmailMessage("Percy from Commp", mail_subject, message, to=[to_email])
             send_email.send()
 
             messages.success(request, 'Password reset email has been sent to your email address.')
