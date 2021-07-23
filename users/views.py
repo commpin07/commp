@@ -71,7 +71,7 @@ def forgotPassword(request):
                 'token': default_token_generator.make_token(user),
             })
             to_email = email
-            send_email = EmailMessage(mail_subject, message, from_email="Percy<commpin07@gmail.com>", to=[to_email])
+            send_email = EmailMessage(mail_subject, message, from_email="Percy<hello@commp.in>", to=[to_email])
             send_email.send()
 
             messages.success(request, 'Password reset email has been sent to your email address.')
@@ -94,7 +94,7 @@ def resetpassword_validate(request, uidb64, token):
         messages.success(request, 'Please reset your password')
         return redirect('resetPassword')
     else:
-        messages.error(request, 'This link has been expired!')
+        messages.error(request, 'This link has expired!')
         return redirect('login')
 
 def resetPassword(request):
@@ -110,7 +110,7 @@ def resetPassword(request):
             messages.success(request, 'Password reset successful')
             return redirect('login')
         else:
-            messages.error(request, 'Password do not match!')
+            messages.error(request, 'Passwords do not match!')
             return redirect('resetPassword')
     else:
         return render(request, 'users/resetPassword.html' )       
