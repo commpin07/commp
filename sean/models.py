@@ -13,6 +13,7 @@ class Item(models.Model):
     category = models.CharField(max_length=256, blank=True, default="English")
     thumbnail = models.ImageField(upload_to='media', default="c.png")  
     tip = models.CharField(max_length=300, default="Tip")
+    appearance = models.CharField(max_length=300, default='appear')
 
 
 class Suggestion(models.Model):
