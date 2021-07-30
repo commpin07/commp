@@ -17,7 +17,7 @@
                 <br>
                 <h2>Your Response</h2>
                 <hr>
-                <p>The impression you should create: <strong> {{item.appearance}}</strong></p>
+                <p>The impression you should create: <strong> {{item.appearance|title}}</strong></p>
                 
                 <form enctype="multipart/form-data" method="POST">
                     {% csrf_token %}
