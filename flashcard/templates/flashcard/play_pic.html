@@ -13,11 +13,11 @@
                         <h2>Flash Card Title: {{item.item_title}}</h2>
                         
                         <hr>
-                        <img width="700px" height="800px" src="{{ item.article.url }}" alt="">
+                        <img style="border-block-style: solid;" width="800px" height="800px" src="{{ item.article.url }}" alt="">
                     </div> 
                 </div>
                 </div> <br><br>
             <!-- </div> -->
   
-  
+            <a href="{% url 'flashcard:index' %}" class="btn btn-success">View more</a>
 {% endblock %}
