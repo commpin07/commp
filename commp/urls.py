@@ -57,7 +57,7 @@ urlpatterns = [
     path('dt/', include('dtt.urls')),
 
     # sean 
-    path('percy/',include('sean.urls')),
+    path('zoey/',include('sean.urls')),
 
     
 
