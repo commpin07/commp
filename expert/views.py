@@ -22,16 +22,19 @@ def expertView(request):
     return render(request,'expert/expertView.html', {'expert':expert})
 
 def index(request,id):
-    # expert_name = Expert.objects.filter(id=id)
-    item_list = Item.objects.filter(user_name_id=id).order_by('-id')
-    p = Paginator(item_list, 9)
-    page = request.GET.get('page')
-    item_list = p.get_page(page)
-    if len(item_list) == 0:
-        return render(request, 'expert/sorry.html', {'item_list':item_list})
-    else:
-        return render(request, 'expert/exprt_index.html', {'item_list':item_list})
-
+    expert_name = Expert.objects.filter(id=id)
+    # user = User.objects.filter(id=id)
+    # item_list = Item.objects.filter(user_name=id).order_by('-id')
+    # p = Paginator(item_list, 9)
+    # page = request.GET.get('page')
+    # item_list = p.get_page(page)
+    # if len(item_list) == 0:
+    #     return render(request, 'expert/sorry.html', {'item_list':item_list})
+    # else:
+    #     return render(request, 'expert/exprt_index.html', {'item_list':item_list})
+    print(expert_name)
+    return HttpResponse("I love Tanya Singh")
+    
 
 class ContentDetail(DetailView):
     model = Item
