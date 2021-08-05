@@ -45,7 +45,7 @@ class Item(models.Model):
     favourite = models.ManyToManyField(User, related_name='favourite', default=None, blank=True)
     language_of_instruction = models.CharField(max_length=100, default="English")
     item_pricecategory = models.ForeignKey(Price_Category, on_delete=models.CASCADE, default=1)
-    item_viewcount = models.IntegerField(default=9)
+    item_viewcount = models.IntegerField(default=1)
     
  
     

@@ -3574,3 +3574,8 @@
  'exceeded': 'beyond expectations',
  'exceeding': 'beyond expectations',
  'exceedingly': 'beyond expectations',
+ 'preference': 'probing',
+ 'highly': 'passionate',
+ 'absolutely': 'passionate',
+ 'amazing': 'beyond expectations',
+ 'amazingly': 'beyond expectations',
