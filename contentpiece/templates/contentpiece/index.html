@@ -17,9 +17,21 @@
     
     
     {% block body %}
+
+
         
         <!-- search bar -->
         <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 style="display: inline;"> Respond to various real life scenarios and Zoey will give you suggestions on the </h6> <h6 style="display: inline; color: #00b03c; font-weight: bolder;">
+                        right choice of words </h6><h6 style="display: inline;">to create the perfect impression.</h6>
+                    <p></p>
+                    <h6 style="display: inline;">Watch & learn from </h6><h6 style="display: inline; color: #00b03c; font-weight: bold;">real conversations.</h6> 
+                    <h6 style="display: inline;">Register for </h6><h6 style="display: inline; color: #00b03c; font-weight: bold;">FREE.</h6>         
+                </div>
+            </div><hr>
+    
             <div class="row">
                 <div class="col-md-12">
                     <form action="{% url 'contentpiece:search_item' %}" method="GET">
@@ -36,9 +48,9 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div>   
         </div>
-        
+      
         <br>
         
     
@@ -61,7 +73,7 @@
         </div>
         
         <div class="col-md-2">
-            <a href="{% url 'contentpiece:detail' item.id %}" class="btn btn-success">Details</a> <br><p></p>
+            <a href="{% url 'contentpiece:detail' item.id %}" class="btn btn-success">Conversation</a> <br><p></p>
             <h6 style="font-size: medium; color: #00b03c;">{{item.item_viewcount}} view{{item.item_viewcount|pluralize}}</h6>
         
             <p></p>

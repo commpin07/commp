@@ -49,22 +49,12 @@
                         {% endif %} -->
                         <a class="btn btn" href="{% url 'sean:index' %}">Zoey</a>  
                         <a class="btn btn" href="{% url 'dtt:index' %}">What's Your Decision?</a>
+                        <!-- <a class="btn btn" href="https://www.youtube.com/watch?v=S9F7CYGnUdc">In Action</a> -->
                         <!-- <a class="btn btn" href="{% url 'flashcard:index' %}">Flash Cards</a> -->
                         <!-- <a class="btn btn-link" style="color: black;" href="{% url 'disboard:index' %}">Discussion Boards</a> -->
                         
                         <!-- <a class="nav-link" href="{% url 'expert:expertView' %}"><h5 style="font-size: medium; color: black;">Expert Corner</h5></a>  -->
                        
-                        
-
-                        <!-- <div class="dropdown">
-                            <button class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown">
-                              Quick Resources
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a style="color: black; margin-left: 5px; font-size: small;" href="{% url 'flashcard:index' %}">Flash Cards</a></li>
-                              <li><a style="color: black; margin-left: 5px; font-size: small;" href="{% url 'disboard:index' %}">Discussion Boards</a></li>
-                            </ul>
-                          </div> -->
 
                         {% if user.is_authenticated %}
                             <div class="dropdown">
