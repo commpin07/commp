@@ -24,13 +24,28 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h6 style="display: inline;"> Respond to various real life scenarios and Zoey will give you suggestions on the </h6> <h6 style="display: inline; color: #00b03c; font-weight: bolder;">
-                        right choice of words </h6><h6 style="display: inline;">to create the perfect impression.</h6>
-                    <p></p>
-                    <h6 style="display: inline;">Watch & learn from </h6><h6 style="display: inline; color: #00b03c; font-weight: bold;">real conversations.</h6> 
-                    <h6 style="display: inline;">Register for </h6><h6 style="display: inline; color: #00b03c; font-weight: bold;">FREE.</h6>         
+                    <h2 style="font-weight: bolder;">Conversations</h2><p></p>
+                    
+                    <h6 style="display: inline;">Watch & learn from </h6><h6 style="display: inline; color: #00b03c; font-weight: bolder;">real conversations.</h6> <h6 style="display: inline;"> 
+                        Get </h6> <h6 style="display: inline; color: #00b03c; font-weight: bolder;">practical tips</h6><h6 style="display: inline;"> on how to create the perfect impression
+                            while communicating in English.</h6><p></p>
+                    <!-- <h6 style="display: inline;">Register for </h6><h6 style="display: inline; color: #00b03c; font-weight: bold;">FREE.</h6>    -->
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'sean:suggestions' %}" class="btn btn-success">Suggestions for Conversations</a> &nbsp;&nbsp;&nbsp;
+                    <hr>
+
+                    {% else %}
+                
+                    <a href="{% url 'register' %}" class="btn btn-success" >Create the Perfect Impression</a> </button>   &nbsp;&nbsp;&nbsp;  
+                    <a href="{% url 'myapp:action' %}" class="btn btn-success">Watch us in Action</a> 
+                    <hr>
+                
+                    {% endif %}
+
+                    <!-- <a href="{% url 'register' %}" class="btn btn-success" >Create the Perfect Impression</a> </button>    &nbsp;&nbsp;&nbsp;   -->
+                    <!-- <a href="{% url 'myapp:action' %}" class="btn btn-success">Watch us in Action</a> -->
                 </div>
-            </div><hr>
+            </div>
     
             <div class="row">
                 <div class="col-md-12">

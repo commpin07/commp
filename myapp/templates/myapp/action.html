@@ -1,0 +1,25 @@
+{% extends 'contentpiece/base.html' %}
+
+{% block body %}
+
+
+ <div class="container">
+  <div class="row g-5">
+      <div class="col">
+          <div class="container mb-3">
+              <h2>{{item.item_name}}</h2> 
+              
+              
+              <hr>
+              <video width="700" height="450" controls autoplay>
+     
+                <source align-content:center src="{{ item.item_content.url }}" type=video/mp4>
+              </video>
+          </div> 
+      </div>
+      </div>
+  <!-- </div> -->
+
+  <a href="{% url 'register' %}" class="btn btn-success">Create the Perfect Impression</a>
+  <br><p></p><br>
+{% endblock %}

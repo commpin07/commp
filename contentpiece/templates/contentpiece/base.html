@@ -39,7 +39,7 @@
 
         <nav class="navbar navbar">
 
-              <a class="navbar-brand" href="{% url 'contentpiece:index' %}"> <img width="180px" src="{% static 'contentpiece/commp_logo.png' %}" alt=""></a>
+              <a class="navbar-brand" href="{% url 'sean:index' %}"> <img width="180px" src="{% static 'contentpiece/commp_logo.png' %}" alt=""></a>
           
                 <div class="navbar">
                         <!-- {% if user.is_authenticated %}
@@ -48,6 +48,8 @@
                          <a href="{% url 'register' %}" class="btn btn-success" >Share Your Ideas</a> </button>
                         {% endif %} -->
                         <a class="btn btn" href="{% url 'sean:index' %}">Zoey</a>  
+                        <a class="btn btn" href="{% url 'contentpiece:index' %}">Conversations</a>  
+                        
                         <a class="btn btn" href="{% url 'dtt:index' %}">What's Your Decision?</a>
                         <!-- <a class="btn btn" href="https://www.youtube.com/watch?v=S9F7CYGnUdc">In Action</a> -->
                         <!-- <a class="btn btn" href="{% url 'flashcard:index' %}">Flash Cards</a> -->

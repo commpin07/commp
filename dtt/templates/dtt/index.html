@@ -24,8 +24,18 @@
                 <h2>What's Your Decision?</h2> <br>
                 <h6>Respond to real life scenarios. Get instant feedback on the <strong>impression</strong> created.</h6>
                 
-                <a href="{% url 'dtt:suggestions' %}" class="btn btn-success">Suggestions for Scenarios</a> 
+                {% if user.is_authenticated %}
+                <a href="{% url 'dtt:suggestions' %}" class="btn btn-success">Suggestions for Scenarios</a> &nbsp;&nbsp;&nbsp;
                 <hr>
+
+                {% else %}
+                
+                <a href="{% url 'register' %}" class="btn btn-success" >Create the Perfect Impression</a> </button>   &nbsp;&nbsp;&nbsp;  
+                <a href="{% url 'myapp:action' %}" class="btn btn-success">Watch us in Action</a> 
+                <hr>
+                
+                {% endif %}
+
             </div>
         </div>
 
@@ -47,7 +57,7 @@
         </div>
         
         <div class="col-md-2">
-            <a href="{% url 'dtt:update_item' item.id %}" class="btn btn-success">View</a> <br><br>
+            <a href="{% url 'dtt:update_item' item.id %}" class="btn btn-success">Respond</a> <br><br>
             <h6 style="font-size: medium; color: #00b03c;">{{item.answer_count}} response{{item.answer_count|pluralize}}</h6>
         </div>
             

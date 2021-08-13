@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# from commp.myapp.views import action
+from django import urls
 from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
@@ -28,11 +30,14 @@ urlpatterns = [
 
     # home page
     # path('',myapp_views.home, name='home'),
-   
+    # path('action',myapp_views.action, name='action'),
+    path('action/', include('myapp.urls')),
+
+    # contentpiece app
+    path('conversations/', include('contentpiece.urls')),
+
     
-    # default listing from contentpiece app
-    path('', include('contentpiece.urls')),
-   
+    
     # user registration
     path('register/',users_views.register, name='register'),
 
@@ -57,7 +62,7 @@ urlpatterns = [
     path('dt/', include('dtt.urls')),
 
     # sean 
-    path('zoey/',include('sean.urls')),
+    path('',include('sean.urls')),
 
     
 
