@@ -184,7 +184,7 @@ DEFAULT_FILE_STORAGE = 'commp.media_storages.MediaStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL= '/media/'
 
-LOGIN_REDIRECT_URL = 'contentpiece:index'
+LOGIN_REDIRECT_URL = 'sean:index'
 LOGIN_URL = 'login'
 
 EMAIL_HOST = config('EMAIL_HOST')
