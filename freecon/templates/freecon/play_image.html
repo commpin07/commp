@@ -1,0 +1,25 @@
+{% extends 'contentpiece/base.html' %}
+
+{% block body %}
+
+
+ <div class="container">
+  <div class="row g-5">
+      <div class="col">
+          <div class="container mb-3">
+              <h2>{{item.item_name}}</h2> 
+        
+              
+              <hr>
+              <video width="700" height="450" controls autoplay>
+     
+                <source align-content:center src="{{ item.item_article.url }}" type=video/mp4>
+              </video>
+          </div> 
+      </div>
+      </div>
+  <!-- </div> -->
+
+  <a href="{% url 'freecon:indexfreecon' %}" class="btn btn-success">View more videos</a>
+  <br><p></p>
+{% endblock %}

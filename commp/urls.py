@@ -34,7 +34,9 @@ urlpatterns = [
     path('action/', include('myapp.urls')),
 
     # contentpiece app
-    path('conversations/', include('contentpiece.urls')),
+    path('featured/', include('contentpiece.urls')),
+
+    path('conversations/', include('freecon.urls')),
 
     
     

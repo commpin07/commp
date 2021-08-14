@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'disboard',
     'dtt',
     'sean',
+    'freecon',
     
 ]
 
