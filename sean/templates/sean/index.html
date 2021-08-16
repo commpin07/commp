@@ -46,7 +46,7 @@
     
     {% for item in item_list %}
     
-  <div class="row">
+  <!-- <div class="row">
         <div class="col-md-3 offset-md-1">
             <img width="180px" height="180px" src="{{ item.thumbnail.url }}">
             
@@ -63,9 +63,9 @@
             <h6 style="font-size: medium; color: #00b03c;">{{item.item_answercount}} response{{item.item_answercount|pluralize}}</h6>
         </div>
             
-  </div><br>
+  </div><br> -->
 
-  <!-- <div class="row">
+  <div class="row">
     <div class="col-md-7 offset-md-2">
         <div class="card mb-3 shadow p-3 bg-body rounded">
             <img width="540px" height="180px" src="{{ item.thumbnail.url }}" class="card-img-top" alt="...">
@@ -80,7 +80,7 @@
           </div>
     </div>
     
-</div> -->
+</div>
     
     {% endfor %}
     
