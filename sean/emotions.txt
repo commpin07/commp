@@ -3782,3 +3782,7 @@
  'congratulations': 'encouraging',
  'milestone': 'clarity of thought',
  'milestones': 'clarity of thought',
+ 'credible': 'confidence',
+ 'streamline': 'attention to detail',
+ 'streamlined': 'attention to detail',
+ 'streamlining': 'attention to detail',

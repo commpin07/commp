@@ -96,7 +96,7 @@ def video(request,id):
 	item.save()
 
 	if item.article_viewtype.id == 1:
-		return render(request, 'contentpiece/play_image.html',{'item':item})
+		return render(request, 'freecon/play_image.html',{'item':item})
 	
 
 # to bookmark

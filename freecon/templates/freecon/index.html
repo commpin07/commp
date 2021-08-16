@@ -90,18 +90,46 @@
         </div>
         
         <div class="col-md-2">
-            <a href="{% url 'freecon:detail' item.id %}" class="btn btn-success">Conversation</a> <br><p></p>
+            <!-- <a href="{% url 'freecon:play_image' item.id %}" class="btn btn-success">Conversation</a> <br><p></p> -->
+            <a href="{% url 'freecon:play_image' item.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#00b03c" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+              </svg></a>  
+               <br><br>
             <h6 style="font-size: medium; color: #00b03c;">{{item.item_viewcount}} view{{item.item_viewcount|pluralize}}</h6>
         
             <p></p>
             
             <!-- like dislike -->
         
-        </div> 
-    </div>   <p></p>
+        <!-- </div> 
+    </div>   <p></p> -->
     <!-- <div class="container">
         <hr style="height:1px;border-width:0;color:gray;background-color:white">
     </div> -->
+
+    
+  <!-- <div class="row">
+    <div class="col-md-7 offset-md-2">
+        <div class="card mb-3 shadow p-3 bg-body rounded">
+            <img width="540px" height="180px" src="{{ item.thumbnail.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title">{{item.item_name}}</h3>
+              <a href="{% url 'freecon:play_image' item.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" fill="#00b03c" class="bi float-right bi-play-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+              </svg></a>  
+              <h5 class="card-text" style="font-size: em;">{{item.item_description}}</h5>
+              <h6 class="card-text" style="color: gray; font-size: x-small; display: inline;">By: {{ item.user_name }}; Language of Instruction: {{item.language_of_instruction}}</h6> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              
+               <br><br>
+            <h6 style="font-size: medium; color: #00b03c;">{{item.item_viewcount}} view{{item.item_viewcount|pluralize}}</h6>
+        
+            <p></p>
+              
+            </div>
+          </div>
+    </div>
+    
+</div> -->
     
     {% endfor %}
 

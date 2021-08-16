@@ -9,7 +9,7 @@
 
 {% for item in favourite_posts %}
     
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-md-3 offset-md-2">
             <img width="180px" height="180px" src="{{ item.thumbnail.url }}">
         </div>
@@ -18,14 +18,39 @@
             <h5>{{item.item_description}}</h5>
             <h6 style="color: gray; font-size: small;">By: {{ item.user_name }}</h6>
             <h6 style="color: gray; font-size: smaller;">Language of Instruction: {{item.language_of_instruction}}</h6>
-            <!-- <h6 style="color: gray; font-size: smaller;">Topic: {{item.topic}}</h6>  -->
+            <h6 style="color: gray; font-size: smaller;">Topic: {{item.topic}}</h6> 
             
         </div>
         <div class="col-md-2">
             <a href="{% url 'contentpiece:detail' item.id %}" class="btn btn-success">Conversation</a>
         </div> 
         
-    </div>   <p></p>
+    </div>   <p></p> -->
+
+    <div class="row">
+        <div class="col-md-7 offset-md-2">
+            <div class="card mb-3 shadow p-3 bg-body rounded">
+                <img width="540px" height="180px" src="{{ item.thumbnail.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3 class="card-title">{{item.item_name}}</h3>
+                  <h5 class="card-text" style="font-size: em;">{{item.item_description}}</h5>
+                  <h6 class="card-text" style="color: gray; font-size: x-small; display: inline;">By: {{ item.user_name }}; Language of Instruction: {{item.language_of_instruction}}</h6> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <!-- <h6 style="display: inline;"> <a href="{% url 'contentpiece:detail' item.id %}" class="btn btn-success">Conversation</a></h6> -->
+                  <a href="{% url 'contentpiece:play_image' item.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#00b03c" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                  </svg></a>  
+                  
+                </div>
+              </div>
+        </div>
+        
+    </div>
+    
+
+    
+    
+     
+
 
     {% empty %}
         <div class="container">
