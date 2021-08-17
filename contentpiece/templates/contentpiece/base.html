@@ -37,17 +37,17 @@
 <body>
     <!-- <div class="container">  -->
 
-        <!-- <nav class="navbar navbar">
+        <nav class="navbar navbar">
 
               <a class="navbar-brand" href="{% url 'sean:index' %}"> <img width="180px" src="{% static 'contentpiece/commp_logo.png' %}" alt=""></a>
           
-                <div class="navbar"> -->
+                <div class="navbar">
                         <!-- {% if user.is_authenticated %}
                         <a href="{% url 'contentpiece:create_item' %}" class="btn btn-success">Share Your Ideas</a>
                         {% else %}
                          <a href="{% url 'register' %}" class="btn btn-success" >Share Your Ideas</a> </button>
                         {% endif %} -->
-                        <!-- <a class="btn btn" href="{% url 'sean:index' %}">Zoey</a>  
+                        <a class="btn btn" href="{% url 'sean:index' %}">Zoey</a>  
                         <div class="dropdown">
                           <button class="btn dropdown-toggle" data-bs-toggle="dropdown">
                             Conversations
@@ -60,7 +60,7 @@
                         </div>
                         
                         
-                        <a class="btn btn" href="{% url 'dtt:index' %}">What's Your Decision?</a> -->
+                        <a class="btn btn" href="{% url 'dtt:index' %}">What's Your Decision?</a>
                         <!-- <a class="btn btn" href="https://www.youtube.com/watch?v=S9F7CYGnUdc">In Action</a> -->
                         <!-- <a class="btn btn" href="{% url 'flashcard:index' %}">Flash Cards</a> -->
                         <!-- <a class="btn btn-link" style="color: black;" href="{% url 'disboard:index' %}">Discussion Boards</a> -->
@@ -68,99 +68,32 @@
                         <!-- <a class="nav-link" href="{% url 'expert:expertView' %}"><h5 style="font-size: medium; color: black;">Expert Corner</h5></a>  -->
                        
 
-                        <!-- {% if user.is_authenticated %}
+                        {% if user.is_authenticated %}
                             <div class="dropdown">
                                 <button class="btn btn-success btn-sm dropdown-toggle" data-bs-toggle="dropdown">
                                   Profile
                                 </button>
-                                <ul class="dropdown-menu"> -->
+                                <ul class="dropdown-menu">
                                   <!-- <li><a style="color: black; margin-left: 5px; font-size: small;" href="{% url 'profile' %}">Profile</a></li> -->
-                                  <!-- <li><a style="color: black; margin-left: 5px; font-size: small;" href="{% url 'flashcard:index' %}">Flash Cards</a></li>
+                                  <li><a style="color: black; margin-left: 5px; font-size: small;" href="{% url 'flashcard:index' %}">Flash Cards</a></li>
                                   <li><a style="color: rgb(161, 160, 160); margin-left: 5px; font-size: small;" href="{% url 'logout' %}">Logout</a></li>
                                 </ul>
                               </div>
                                 
                             {% else %}
-                                <a class="btn btn-success" href="{% url 'login' %}">Login</a>  -->
+                                <a class="btn btn-success" href="{% url 'login' %}">Login</a> 
                                 
                                 <!-- <a href="{% url 'register' %}">Signup</a> -->
-                            <!-- {% endif %}
+                            {% endif %}
                             
                     </div>
            
                 </nav> <br>
-        -->
+       
                 
 
 
 
-                <nav class="navbar navbar-expand-lg navbar-light">
-                  <div class="container-fluid">
-                    <a class="navbar-brand" href="{% url 'sean:index' %}"><img width="180px" src="{% static 'contentpiece/commp_logo.png' %}" alt=""></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                          <a class="btn btn" aria-current="page" style="font-weight: bolder;" href="{% url 'sean:index' %}">Zoey</a>
-                        </li>
-
-                        <li class="nav-item">
-                          <div class="dropdown">
-                            <button class="btn btn dropdown-toggle" style="font-weight: bolder;" data-bs-toggle="dropdown">
-                              Conversations
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a style="color: black; margin-left: 5px; font-size: medium;" href="{% url 'freecon:indexfreecon' %}">Conversations</a></li>
-                              <p></p>
-                              <li><a style="color: black; margin-left: 5px; font-size: medium;" href="{% url 'contentpiece:index' %}">Featured Conversations </a></li>
-                              
-                            </ul>
-                          </div>
-                          
-                        </li>
-                        <li class="nav-item">
-                          <a class="btn btn" aria-current="page" style="font-weight: bolder;" href="{% url 'dtt:index' %}">What's Your Decision?</a>
-                        </li>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        <li class="nav-item">
-
-                          {% if user.is_authenticated %}
-                          <div class="dropdown">
-                              <button class="btn float-right btn-success btn-sm dropdown-toggle" data-bs-toggle="dropdown">
-                                Profile
-                              </button>
-                              <ul class="dropdown-menu">
-                                <!-- <li><a style="color: black; margin-left: 5px; font-size: small;" href="{% url 'profile' %}">Profile</a></li> -->
-                                <li><a style="color: black; margin-left: 5px; font-size: small;" href="{% url 'flashcard:index' %}">Flash Cards</a></li>
-                                <li><a style="color: rgb(161, 160, 160); margin-left: 5px; font-size: small;" href="{% url 'logout' %}">Logout</a></li>
-                              </ul>
-                            </div>
-                              
-                          {% else %}
-                              <a class="btn btn-success" href="{% url 'login' %}">Login</a> 
-                              
-                              <!-- <a href="{% url 'register' %}">Signup</a> -->
-                          {% endif %}
-
-
-                        </li>
-
-
-                      </ul>
-                      
-
-                            
-                    </div>
-                  </div>
-                </nav> <br>
-                
         
     <!-- </div> -->
     
