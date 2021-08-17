@@ -1,29 +1,56 @@
 {% extends 'contentpiece/base.html' %}
 {% block body %}
 
-<div class="container">
+<!-- <div class="container">
     <div class="row g-5">
         <div class="col">
             <div class="container mb-3">
                 <h2 class="font-weight-bold mt-3">Signup for Free</h2>
-                <h6>To login please use the Username you set.</h6>
+                <h6>To login please use the Username you set.</h6> -->
                 <!-- <h6>Please enter the correct email id.</h6> -->
-                <hr>
+                <!-- <hr>
             <form action="" method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
                 <button class="btn btn-success" type="submit">SIGNUP</button> <br><br>
                
                 <h3>Already have an account? <a href="{% url 'login' %}">Login</a></h3><br>
-                <p>To become a contributor write to us at hello@commp.in</p>
+                <p>To become a contributor write to us at hello@commp.in</p> -->
                 <!-- <p>To register as an expert write in to us at commpin07@gmail.com</p> -->
             
-            </form>
+            <!-- </form>
             </div> 
         </div>
         </div>
     </div>
-    <br><br>
+    <br><br> -->
+
+    <div class="row">
+        <div class="col-md-7 offset-md-2">
+            <div class="card mb-5 shadow p-3 bg-body rounded" style="max-width: 100%;">
+                
+                <div class="card-body">
+                  <!-- <h3 class="card-title">{{item.item_name}}</h3> -->
+                  <h2 class="font-weight-bold mt-3">Signup for Free</h2>
+                <h6>To login please use the Username you set.</h6>
+                <hr>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-success" type="submit">SIGNUP</button> <br><br>
+                   
+                    <h3>Already have an account? <a href="{% url 'login' %}">Login</a></h3><br>
+                    <p>To become a contributor write to us at hello@commp.in</p>
+                    <!-- <p>To register as an expert write in to us at commpin07@gmail.com</p> -->
+                
+                </form>
+                <p></p>
+                  
+                </div>
+              </div>
+        </div>
+        
+    </div><br>
     
 
 {% endblock %}
