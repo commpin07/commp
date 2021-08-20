@@ -14,12 +14,6 @@ class Category(models.Model):
 
     category_name = models.CharField(max_length=256)
 
-class LangIns(models.Model):
-    def __str__(self):
-        return self.langins_name
-
-    langins_name = models.CharField(max_length=256)       
-
 
 class Genre(models.Model):
     def __str__(self):
