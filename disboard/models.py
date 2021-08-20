@@ -9,7 +9,7 @@ class ItemDib(models.Model):
         return self.item_title
 
     item_title = models.CharField(max_length=256)
-    description = models.CharField(max_length=500)
+    description = models.CharField(max_length=7000)
     thumbnail = models.ImageField(upload_to='media', default="c.png")  
     name = models.CharField(max_length=256, default=None)
     favs = models.ManyToManyField(User, related_name='favs', default=None, blank=True)

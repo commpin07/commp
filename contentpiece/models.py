@@ -14,6 +14,8 @@ class Category(models.Model):
 
     category_name = models.CharField(max_length=256)
 
+   
+
 
 class Genre(models.Model):
     def __str__(self):
@@ -25,7 +27,13 @@ class Price_Category(models.Model):
     def __str__(self):
         return self.price_name
 
-    price_name = models.CharField(max_length=50)           
+    price_name = models.CharField(max_length=50)     
+
+class Lofist(models.Model):
+    def __str__(self):
+        return self.loi_name
+
+    loi_name = models.CharField(max_length=256)             
 
 class Item(models.Model):
     def __str__(self):
@@ -44,6 +52,7 @@ class Item(models.Model):
     liked = models.ManyToManyField(User, related_name='liked', default=None, blank=True)
     favourite = models.ManyToManyField(User, related_name='favourite', default=None, blank=True)
     language_of_instruction = models.CharField(max_length=100, default="English")
+    lofi = models.ForeignKey(Lofist, on_delete=models.CASCADE, default=1)
     item_pricecategory = models.ForeignKey(Price_Category, on_delete=models.CASCADE, default=1)
     item_viewcount = models.IntegerField(default=1)
     
