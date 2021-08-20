@@ -1,6 +1,6 @@
 from django.contrib import admin
 from embed_video.admin import AdminVideoMixin
-from .models import Category, Item, Genre, Like, Comment, Price_Category, Lofist
+from .models import Category, Item, Genre, Like, Comment, Price_Category, LangIns
 
 # Register your models here.
 
@@ -15,7 +15,7 @@ admin.site.register(Genre)
 admin.site.register(Like)
 admin.site.register(Comment)
 admin.site.register(Price_Category)
-admin.site.register(Lofist)
+admin.site.register(LangIns)
 
 
 
