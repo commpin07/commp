@@ -21,7 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from users import views as users_views
 from myapp import views as myapp_views
-from expert import views as expert_views
+
 from django.contrib.auth import views as authentication_views
 
 urlpatterns = [
@@ -52,8 +52,7 @@ urlpatterns = [
     # profile page
     path('profile/',users_views.profilepage, name='profile'),
 
-    path('expert/', include('expert.urls')),
-
+    
     # flashcards
     path('flashcard/',include('flashcard.urls')),
 

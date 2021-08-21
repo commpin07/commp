@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'admin_honeypot',
     'storages',
     'flashcard',
-   
     'disboard',
     'dtt',
     'sean',
