@@ -9,7 +9,7 @@ class Expert(models.Model):
 
     user_name= models.ForeignKey(User, on_delete=models.CASCADE)
     expert_name = models.CharField(max_length=256, default='name')
-    profile_pic = models.ImageField(upload_to='media', default='profilepic.jpg')
+    # profile_pic = models.ImageField(upload_to='media', default='profilepic.jpg')
     description = models.CharField(max_length=500)
 
     
