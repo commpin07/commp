@@ -4,17 +4,6 @@ from django.urls import reverse
 
 # Create your models here.
 
-class Langinstr(models.Model):
-    def __str__(self):
-        return self.langins_name
-
-    langins_name = models.CharField(max_length=256)    
-
-class Genre(models.Model):
-    def __str__(self):
-        return self.genre_name
-
-    genre_name = models.CharField(max_length=100)      
 
 class ItemDib(models.Model):
     def __str__(self):
