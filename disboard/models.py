@@ -30,7 +30,7 @@ class ItemDib(models.Model):
     
     article_viewtype = models.ForeignKey(ViewMode, on_delete=models.CASCADE,default=None, null=True)
     loi = models.ForeignKey(Language, on_delete=models.CASCADE, default=1)
-    item_viewcount = models.IntegerField(default=1)
+    
     favs = models.ManyToManyField(User, related_name='favs', default=None, blank=True)
    
     
