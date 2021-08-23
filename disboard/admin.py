@@ -1,7 +1,9 @@
 from django.contrib import admin
-from .models import ItemDib, CommentDib
+from .models import ItemDib, CommentDib, Langinstr, Genre
 
 # Register your models here.
 
 admin.site.register(ItemDib)
 admin.site.register(CommentDib)
+admin.site.register(Langinstr)
+admin.site.register(Genre)
