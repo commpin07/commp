@@ -4,6 +4,19 @@ from django.urls import reverse
 
 # Create your models here.
 
+class Language(models.Model):
+    def __str__(self):
+        return self.language_name
+        
+    language_name = models.CharField(max_length=256)    
+
+
+class ViewMode(models.Model):
+    def __str__(self):
+        return self.viewmode
+
+    viewmode = models.CharField(max_length=100)    
+
 
 class ItemDib(models.Model):
     def __str__(self):
