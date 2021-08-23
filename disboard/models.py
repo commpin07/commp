@@ -22,14 +22,15 @@ class ItemDib(models.Model):
     def __str__(self):
         return self.item_title
 
-    
+    user_name = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     item_title = models.CharField(max_length=256)
     description = models.CharField(max_length=7000)
     thumbnail = models.ImageField(upload_to='media', default="c.png")  
     name = models.CharField(max_length=256, default=None, blank=True)
-    
-    
-    
+    item_article = models.FileField(upload_to='media', default="c.png")
+    article_viewtype = models.ForeignKey(ViewMode, on_delete=models.CASCADE,default=None, null=True)
+    loi = models.ForeignKey(Language, on_delete=models.CASCADE, default=1)
+    item_viewcount = models.IntegerField(default=1)
     favs = models.ManyToManyField(User, related_name='favs', default=None, blank=True)
    
     
