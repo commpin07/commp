@@ -56,8 +56,8 @@ urlpatterns = [
     # flashcards
     path('flashcard/',include('flashcard.urls')),
 
-    # discussion board
-    path('discussionboard/',include('disboard.urls')),
+    # blog
+    path('blog/',include('blog.urls')),
 
     # decision tree
     path('dt/', include('dtt.urls')),

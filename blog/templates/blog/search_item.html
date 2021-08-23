@@ -16,11 +16,11 @@
             <img width="540px" height="180px" src="{{ item.thumbnail.url }}" class="card-img-top" alt="...">
             <div class="card-body">
               <h3 class="card-title">{{item.item_name}}</h3>
-              <a href="{% url 'freecon:play_image' item.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" fill="#00b03c" class="bi float-right bi-play-circle-fill" viewBox="0 0 16 16">
+              <a href="{% url 'blog:play_pdf' item.id %}"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" fill="#00b03c" class="bi float-right bi-play-circle-fill" viewBox="0 0 16 16">
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
               </svg></a>  
               <h5 class="card-text" style="font-size: em;">{{item.item_description}}</h5>
-              <h6 class="card-text" style="color: gray; font-size: x-small; display: inline;">By: {{ item.user_name }}; Language of Instruction: {{item.language_of_instruction}}</h6> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <h6 class="card-text" style="color: gray; font-size: x-small; display: inline;">By: {{ item.user_name }}; Language of Instruction: {{item.loi}}</h6> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               
                <br><br>
             <h6 style="font-size: medium; color: #00b03c;">{{item.item_viewcount}} view{{item.item_viewcount|pluralize}}</h6>
@@ -32,7 +32,6 @@
     </div>
     
 </div>
-  <p></p>
   {% endfor %} <br><br>
   {% else %}
 	<div>
