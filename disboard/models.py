@@ -14,11 +14,11 @@ class ItemDib(models.Model):
     description = models.CharField(max_length=7000)
     thumbnail = models.ImageField(upload_to='media', default="c.png")  
     name = models.CharField(max_length=256, default=None, blank=True)
-    item_article = models.FileField(upload_to='media', default="c.png")
+    
     
     
     favs = models.ManyToManyField(User, related_name='favs', default=None, blank=True)
-    item_viewcount = models.IntegerField(default=1)
+   
     
     def get_absolute_url(self):
         return reverse('disboard:detail', kwargs={'pk':self.pk})
