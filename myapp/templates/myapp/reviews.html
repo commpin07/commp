@@ -21,6 +21,13 @@
         <div class="row">
             <div class="col-md-12">
                 <h2 style="font-weight: bolder;">What are other users saying about us?</h2><p></p>
+                {% if user.is_authenticated %}
+  <a href="{% url 'sean:index' %}" class="btn btn-success btn-sm">Get Started</a>
+ 
+  {% else %} 
+  <a href="{% url 'register' %}" class="btn btn-success btn-sm">Create the Perfect Impression</a>
+  <a href="{% url 'myapp:action' %}" class="btn btn-success btn-sm">Watch us in Action</a> 
+  {% endif %}
                 <hr>
             </div>
         </div>
@@ -37,16 +44,24 @@
         <div class="card mb-3 shadow p-3 bg-body rounded" style="max-width: 100%;">
             
             <div class="card-body">
-              <h3 class="card-title">{{item.comment_article_name}}</h3>
-              <p class="card-text">{{item.comment_article}}</p>
+              <h3 style="font-weight: lighter;" class="card-title">{{item.comment_article_name}}</h3>
+              <h5 class="card-text">{{item.comment_article}}</h5>
+              <h5 style="font-size: small; font-weight: lighter;" class="card-text">By - {{item.comment_user}}</h5>
               
             </div>
           </div>
     </div>
     
 </div>
-    {% endfor %}
-    
+    {% endfor %} <p></p>
+    {% if user.is_authenticated %}
+  <a href="{% url 'sean:index' %}" class="btn btn-success btn-sm">Get Started</a>
+ 
+  {% else %} 
+  <a href="{% url 'register' %}" class="btn btn-success btn-sm">Create the Perfect Impression</a>
+  <a href="{% url 'myapp:action' %}" class="btn btn-success btn-sm">Watch us in Action</a> 
+  {% endif %}
+  <p></p>
     
     <!-- pagination -->
 
