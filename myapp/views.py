@@ -12,3 +12,6 @@ def home(request):
 def action(request):
     item = ItemVid.objects.get()
     return render(request, 'myapp/action.html',{'item':item})
+
+def reviewss(request):
+    return render(request, 'myapp/reviews.html')    
