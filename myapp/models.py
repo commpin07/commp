@@ -16,5 +16,6 @@ class Comreview(models.Model):
 
     comment_article_name = models.CharField(max_length=500)
     comment_article = models.TextField(max_length=900)
+    comment_user = models.CharField(max_length=300, default='Commp')
     
 

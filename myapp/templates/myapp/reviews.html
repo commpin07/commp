@@ -1,6 +1,75 @@
-<html>
+{% extends 'contentpiece/base.html' %}
 
-<h1>
-    i love tanya singh
-</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    
+    {% block body %}
+        
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style="font-weight: bolder;">What are other users saying about us?</h2><p></p>
+                <hr>
+            </div>
+        </div>
+
+    
+    
+    <!-- Displaying items -->
+    
+    {% for item in item_list %}
+    
+    
+  <div class="row">
+    <div class="col-md-7 offset-md-2">
+        <div class="card mb-3 shadow p-3 bg-body rounded" style="max-width: 100%;">
+            
+            <div class="card-body">
+              <h3 class="card-title">{{item.comment_article_name}}</h3>
+              <p class="card-text">{{item.comment_article}}</p>
+              
+            </div>
+          </div>
+    </div>
+    
+</div>
+    {% endfor %}
+    
+    
+    <!-- pagination -->
+
+    <div class="container">
+        {% if item_list.has_previous %}
+        <a href="?page=1">First</a>
+        <a href="?page={{ item_list.previous_page_number }}">Previous</a>
+    {% endif %}
+    Page: {{ item_list.number }} of {{ item_list.paginator.num_pages }}
+    {% if item_list.has_next %}
+        <a href="?page={{ item_list.next_page_number }}">Next</a>
+        <a href="?page={{ item_list.paginator.num_pages }}">Last</a>
+    {% endif %}    
+    </div><br><br><br>
+
+   {% endblock %}
+    
+
+
+</body>
 </html>
+
+
+
+
+
