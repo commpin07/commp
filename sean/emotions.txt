@@ -4533,3 +4533,8 @@
  'stages': 'clarity of thought',
  'further': 'focused',
  'determine': 'clarity of thought',
+ 'aside': 'clarity of thought',
+ 'duration': 'attention to detail',
+ 'couple': 'attention to detail',
+ 'unsure': 'concerned',
+ 'minutes': 'clarity of thought',
