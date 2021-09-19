@@ -4538,3 +4538,8 @@
  'couple': 'attention to detail',
  'unsure': 'concerned',
  'minutes': 'clarity of thought',
+ 'deeper': 'probing',
+ 'opportunity': 'clarity of thought',
+ 'fine-tune': 'attention to detail',
+ 'pitch': 'clarity of thought',
+ 'funnel': 'attention to detail',
